@@ -1,90 +1,90 @@
 {
   "setSong1": {
-    "songId": "Song23",
-    "setId": "Set1"
+    "songId": "song23",
+    "setId": "set1"
     },
   "setSong2": {
-    "songId": "Song24",
-    "setId": "Set1"
+    "songId": "song24",
+    "setId": "set1"
     },
   "setSong3": {
-    "songId": "Song25",
-    "setId": "Set1"
+    "songId": "song25",
+    "setId": "set1"
     },
   "setSong4": {
-    "songId": "Song15",
-    "setId": "Set1"
+    "songId": "song15",
+    "setId": "set1"
     },
   "setSong5": {
-    "songId": "Song17",
-    "setId": "Set1"
+    "songId": "song17",
+    "setId": "set1"
     },
   "setSong6": {
-    "songId": "Song4",
-    "setId": "Set2"
+    "songId": "song4",
+    "setId": "set2"
     },
   "setSong7": {
-    "songId": "Song21",
-    "setId": "Set2"
+    "songId": "song21",
+    "setId": "set2"
     },
   "setSong8": {
-    "songId": "Song5",
-    "setId": "Set2"
+    "songId": "song5",
+    "setId": "set2"
     },
   "setSong9": {
-    "songId": "Song1",
-    "setId": "Set3"
+    "songId": "song1",
+    "setId": "set3"
     },
   "setSong10": {
-    "songId": "Song2",
-    "setId": "Set3"
+    "songId": "song2",
+    "setId": "set3"
     },
   "setSong11": {
-    "songId": "Song3",
-    "setId": "Set3"
+    "songId": "song3",
+    "setId": "set3"
     },
   "setSong12": {
-    "songId": "Song8",
-    "setId": "Set3"
+    "songId": "song8",
+    "setId": "set3"
     },
   "setSong13": {
-    "songId": "Song14",
-    "setId": "Set4"
+    "songId": "song14",
+    "setId": "set4"
     },
   "setSong14": {
-    "songId": "Song13",
-    "setId": "Set4"
+    "songId": "song13",
+    "setId": "set4"
     },
   "setSong15": {
-    "songId": "Song21",
-    "setId": "Set4"
+    "songId": "song21",
+    "setId": "set4"
     },
   "setSong16": {
-    "songId": "Song1",
-    "setId": "Set4"
+    "songId": "song1",
+    "setId": "set4"
     },
   "setSong17": {
-    "songId": "Song2",
-    "setId": "Set4"
+    "songId": "song2",
+    "setId": "set4"
     },
   "setSong18": {
-    "songId": "Song29",
-    "setId": "Set5"
+    "songId": "song29",
+    "setId": "set5"
     },
   "setSong19": {
-    "songId": "Song22",
-    "setId": "Set5"
+    "songId": "song22",
+    "setId": "set5"
     },
   "setSong20": {
-    "songId": "Song19",
-    "setId": "Set5"
+    "songId": "song19",
+    "setId": "set5"
     },
   "setSong21": {
-    "songId": "Song11",
-    "setId": "Set5"
+    "songId": "song11",
+    "setId": "set5"
     },
   "setSong22": {
-    "songId": "Song20",
-    "setId": "Set5"
+    "songId": "song20",
+    "setId": "set5"
     }
   }
