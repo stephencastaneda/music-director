@@ -1,0 +1,18 @@
+{
+  "type1": {
+    "title": "YouTube",
+    "icon": "fab fa-youtube"
+    },
+  "type2": {
+    "title": "Link",
+    "icon": "fas fa-globe"
+    },
+  "type3": {
+    "title": "PDF",
+    "icon": "fas fa-file-pdf"
+    },
+  "type4": {
+    "title": "mp3",
+    "icon": "fas fa-file-audio"
+    }
+  }

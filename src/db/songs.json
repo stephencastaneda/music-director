@@ -1,0 +1,215 @@
+{
+	"Song1": {
+      "songTitle": "I Need You",
+      "albumTitle": "Stand Out",
+			"artist": "Tye Tribbett",
+			"releaseYear": 2008,
+      "albumImage": "https://images-na.ssl-images-amazon.com/images/I/718px-oPDUL._SL1500_.jpg"
+    },
+  
+    "Song2": {
+      "songTitle": "Your Great Name",
+      "albumTitle": "Your Great Name(Live)",
+			"artist": "Todd Dulaney",
+			"releaseYear": 2017,
+      "albumImage": "https://images-na.ssl-images-amazon.com/images/I/91aHKPicc5L._SL1500_.jpg"
+    },
+
+    "Song3": {
+      "songTitle": "Great Is the Day",
+      "albumTitle": "Self-Titled",
+			"artist": "Kevin Terry & Predestined",
+			"releaseYear": 2011,
+      "albumImage": "https://m.media-amazon.com/images/I/51hDya7u-OL._SS500_.jpg"
+    },
+    "Song4": {
+      "songTitle": "Psalm 117",
+      "albumTitle": "Self-Titled",
+			"artist": "Earl Bynum and The Mount Unity Choir",
+			"releaseYear": 2013,
+      "albumImage": "https://m.media-amazon.com/images/I/81mfageTSxL._SS500_.jpg"
+    },
+    "Song5": {
+      "songTitle": "Clap Your Hands",
+      "albumTitle": "Strength",
+			"artist": "The New Life Community Choir feat. John P. Kee",
+			"releaseYear":  1997,
+      "albumImage": "https://images-na.ssl-images-amazon.com/images/I/51ole4QCGgL._SY355_.jpg"
+    },
+    "Song6": {
+      "songTitle": "I Tried Him and I Know Him",
+      "albumTitle": "Open Your Eyes",
+			"artist": "Rev. Milton Brunson and The Thompson Community Singers",
+			"releaseYear":  1990,
+      "albumImage": "https://img.discogs.com/c3-B9wjbqjSiidnFsznKkRafjSg=/fit-in/600x544/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3950559-1350302339-1823.jpeg.jpg"
+    },
+    "Song7": {
+      "songTitle": "Stand",
+      "albumTitle": "Self-Titled",
+			"artist": "Donnie McClurkin",
+			"releaseYear": 1996,
+      "albumImage": "https://images-na.ssl-images-amazon.com/images/I/71A-j0Ri73L._SL1448_.jpg"
+    },
+    "Song8": {
+      "songTitle": "I'll Trust You",
+      "albumTitle": "Journey",
+			"artist": "Richard Smallwood with Vision",
+			"releaseYear":  2006,
+      "albumImage": "https://images-na.ssl-images-amazon.com/images/I/81boeW1SaRL._SL1500_.jpg"
+    },
+    "Song9": {
+      "songTitle": "Life and Favor",
+      "albumTitle": "Life and Favor",
+			"artist": "John P. Kee & New Life feat. Kirk Franklin & Fred Hammond",
+			"releaseYear": 2012,
+      "albumImage": "https://images-na.ssl-images-amazon.com/images/I/51VRhwjq7gL.jpg"
+    },
+    "Song10": {
+      "songTitle": "For the Rest of My Life",
+      "albumTitle": "Live in New York",
+			"artist": "Rev. Timothy Wright & The New York Fellowship Mass Choir ll",
+			"releaseYear":  2003,
+      "albumImage": "https://m.media-amazon.com/images/I/81z8HI8gjIL._SS500_.jpg"
+      
+    },
+    "Song11": {
+      "songTitle": "When The Saints Go To Worship",
+      "albumTitle": "Hold On",
+			"artist": "Benita Washington",
+			"releaseYear":  2004,
+			"albumImage": "https://i.ytimg.com/vi/C_hq1zsscgI/sddefault.jpg"
+    },
+    "Song12": {
+      "songTitle": "Having You There",
+      "albumTitle": "Greatest Hits",
+			"artist": "Mississippi Mass Choir",
+			"releaseYear": 1995,
+			"albumImage": "https://m.media-amazon.com/images/I/B1lExtysxoS._SS500_.jpg"
+    },
+    "Song13": {
+      "songTitle": "My Joy",
+      "albumTitle": "The Faith Life",
+			"artist": "Alvin Slaughter",
+			"releaseYear":  2005,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/61xHww4XjCL._SL1500_.jpg"
+    },
+    "Song14": {
+      "songTitle": "Praise On My Mind",
+      "albumTitle": "The Best Of Both Worlds",
+			"artist": "Charles Jenkins & Fellowship Chicago",
+			"releaseYear": 2012,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/81QGIpktl3L._SL1500_.jpg"
+    },
+    "Song15": {
+      "songTitle": "Who's On The Lord's Side",
+      "albumTitle": "Who's On The Lord's Side (Live)",
+			"artist": "Rev. Timothy Wright",
+			"releaseYear": 1993,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/41WeZoLz1vL.jpg"
+    },
+    "Song16": {
+      "songTitle": "Let The Praise Begin (Live)",
+      "albumTitle": "Pages Of Life",
+			"artist": "Fred Hammond & Radical For Christ",
+			"releaseYear": 1998,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/51LOkpJeAvL.jpg"
+    },
+    "Song17": {
+      "songTitle": "Lord Keep Me Day By Day (Live)",
+      "albumTitle": "Joe Pace Presents: H.B. Charles Jr. and the Shilow Church Choir (Live)",
+			"artist": "H.B. Charles JR. and the Shiloh Church Choir",
+			"releaseYear": 2016,
+			"albumImage": "https://i.ytimg.com/vi/yLwqKQK0Epw/maxresdefault.jpg"
+    },
+    "Song18": {
+      "songTitle": "Jesus I Love Calling Your Name",
+      "albumTitle": "Jesus I Love Calling Your Name",
+			"artist": "Shirley Ceaser",
+			"releaseYear":  1992,
+			"albumImage": "https://i.ytimg.com/vi/d0A8ixy01JI/maxresdefault.jpg"
+    },
+    "Song19": {
+      "songTitle": "I Am The One",
+      "albumTitle": "Just The Beginning",
+			"artist": "Kurt Carr & Kurt Carr Singers",
+			"releaseYear": 2008,
+			"albumImage": "https://cdn-s3.allmusic.com/release-covers/500/0001/005/0001005008.jpg"
+    },
+    "Song20": {
+      "songTitle": "The Blood",
+      "albumTitle": "After This",
+			"artist": "Youthful Praise ft. LaShun Pace",
+			"releaseYear": 2011,
+			"albumImage": "https://i.ytimg.com/vi/zPkzxuxsk3o/hqdefault.jpg"
+    },
+    "Song21": {
+      "songTitle": "Better",
+      "albumTitle": "Better",
+      "artist": "Hezekiah Walker",
+			"releaseYear": 2016,
+			"albumImage": "https://i.ytimg.com/vi/vFgkZX9Z65M/maxresdefault.jpg"
+    },
+    "Song22": {
+      "songTitle": "Marvelous",
+      "albumTitle": "Love Alive V",
+			"artist": "Walter Hawkins and the Love Center Choir",
+			"releaseYear": 1998,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/41VE920B41L._QL70_ML2_.jpg"
+    },
+    "Song23": {
+      "songTitle": "I Will Bless The Lord At All Times",
+      "albumTitle": "Joe Pace Presents Let There Be Praise",
+			"artist": "Joe Pace",
+			"releaseYear": 2001,
+			"albumImage": "https://img.discogs.com/KqqbBtGHvB77BTp_jHlKvomdx4A=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8515151-1463168180-7014.jpeg.jpg"
+    },
+    "Song24": {
+      "songTitle": "Go Tell It On The Mountain",
+      "albumTitle": "A Bright Side",
+			"artist": "The Migthy Clouds Of Joy",
+			"releaseYear": 1965,
+			"albumImage": "https://img.discogs.com/rHbyvxr_Fj3fQesN6m5DIgUush8=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5906506-1405973654-5650.jpeg.jpg"
+    },
+    "Song25": {
+      "songTitle": "God's Grace",
+      "albumTitle": "The Favor Of God",
+			"artist": "Rev. Luther Barnes and the Restoration Worship Center Choir",
+			"releaseYear": 2016,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/412JCfrSmbL._SY355_.jpg"
+    },
+    "Song26": {
+      "songTitle": "Mighty Good God",
+      "albumTitle": "My Mind Is Made Up",
+			"artist": "Chicago Mass Choir",
+			"releaseYear": 2011,
+			"albumImage": "https://i.ytimg.com/vi/MIUFk1GI_p8/hqdefault.jpg"
+    },
+    "Song27": {
+      "songTitle": "He's An On Time God",
+      "albumTitle": "On Time God",
+			"artist": "Dottie Peoples & The Peoples Choice Chorale",
+			"releaseYear": 1994,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/41PDGD1QJDL._SX300_QL70_ML2_.jpg"
+    },
+    "Song28": {
+      "songTitle": "God Is Able",
+      "albumTitle": "Place Of Worship",
+			"artist": "Phil Tarver",
+			"releaseYear":  2010,
+			"albumImage": "https://images-na.ssl-images-amazon.com/images/I/51tb7OcrqpL._SY355_.jpg"
+    },
+    "Song29": {
+      "songTitle": "Walk On By Faith",
+      "albumTitle": "Let It Rain",
+			"artist": "Bishop Paul S. Morton & The FGBCF Mass Choir",
+			"releaseYear": 2003,
+			"albumImage": "https://m.media-amazon.com/images/I/71KYEClpdUL._SS500_.jpg"
+    },
+    "Song30": {
+      "songTitle": "He Decided",
+      "albumTitle": "The Donald Vails Choaraleers",
+			"artist": "The Donald Vails Choarleers",
+			"releaseYear": 1978,
+			"albumImage": "https://img.discogs.com/yZJYNuuWSL0WfF6Z5k97_zv7x7g=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2304044-1572950615-3535.jpeg.jpg"
+    }
+}

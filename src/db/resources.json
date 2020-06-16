@@ -1,0 +1,93 @@
+{
+	"Resource1": {
+      "resourceName": "I Need You Recording",
+      "typeId": "YouTube",
+			"songId": "Song1",
+			"url": "https://www.youtube.com/watch?v=ku33rcu8YSg"
+    },
+	"Resource2": {
+      "resourceName": "Your Great Name Recording",
+      "typeId": "YouTube",
+			"songId": "Song2",
+			"url": "https://www.youtube.com/watch?v=EgrNKtuODaM"
+    },
+	"Resource3": {
+      "resourceName": "Great Is The Day Recording",
+      "typeId": "YouTube",
+			"songId": "Song3",
+			"url": "https://www.youtube.com/watch?v=suTtZ41G658"
+    },
+	"Resource4": {
+      "resourceName": "Psalms 117 Recording",
+      "typeId": "YouTube",
+			"songId": "Song4",
+			"url": "https://www.youtube.com/watch?v=mG18K5Nuxzc"
+    },
+	"Resource5": {
+      "resourceName": "Clap Your Hands",
+      "typeId": "YouTube",
+			"songId": "Song5",
+			"url": "https://www.youtube.com/watch?v=p5sRCDXMtRs"
+    },
+	"Resource6": {
+      "resourceName": "When The Saints Go To Worship",
+      "typeId": "Link",
+			"songId": "Song11",
+			"url": "https://www.lpmbc.org/UserFiles/Ministries/AVoices/Docs/Lyrics/When_The_Saints_Go_To_Worship_Benita_Washington.pdf"
+    },
+	"Resource7": {
+      "resourceName": "Having You There Song Chart",
+      "typeId": "PDF",
+			"songId": "Song12",
+			"url": "https://www.youtube.com/watch?v=OC2mpQQrrns"
+    },
+	"Resource8": {
+      "resourceName": "Who's On The Lord's Side Song Chart",
+      "typeId": "PDF",
+			"songId": "Song15",
+			"url": "https://www.youtube.com/watch?v=dbKsodzv0R4"
+    },
+	"Resource9": {
+      "resourceName": "Let The Praise Begin - Tenor Recording",
+      "typeId": "mp3",
+			"songId": "Song16",
+			"url": "https://www.youtube.com/watch?v=6KV4glz5FXY"
+    },
+	"Resource10": {
+      "resourceName": "Let The Praise Begin - Soprano Recording",
+      "typeId": "mp3",
+			"songId": "Song16",
+			"url": "https://www.youtube.com/watch?v=6KV4glz5FXY"
+    },
+	"Resource11": {
+      "resourceName": "Better - Alto Recording",
+      "typeId": "mp3",
+			"songId": "Song21",
+			"url": "https://www.youtube.com/watch?v=1nrcZQliOGI"
+    },
+	"Resource12": {
+      "resourceName": "God's Grace Lyrics",
+      "typeId": "Link",
+			"songId": "Song25",
+			"url": "https://www.azlyrics.com/lyrics/lutherbarnes/godsgrace.html"
+    },
+	"Resource13": {
+      "resourceName": "God's Grade Song Chart",
+      "typeId": "PDF",
+			"songId": "Song25",
+			"url": "https://www.youtube.com/watch?v=5FjEXannj44"
+    },
+	"Resource14": {
+      "resourceName": "Mighty Good God Recording",
+      "typeId": "YouTube",
+			"songId": "Song26",
+			"url": "https://www.youtube.com/watch?v=MCqk0YtnO5A"
+    },
+	"Resource15": {
+      "resourceName": "He's An On Time God Recording",
+      "typeId": "YouTube",
+			"songId": "Song27",
+			"url": "https://www.youtube.com/watch?v=mRgvYgOJK6g"
+		}
+}
+  
