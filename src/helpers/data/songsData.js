@@ -20,4 +20,6 @@ const getAllSongs = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllSongs };
+const getSingleSong = (songId) => axios.get(`${baseUrl}/songs/${songId}.json`);
+
+export default { getAllSongs, getSingleSong };
