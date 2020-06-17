@@ -4,8 +4,13 @@ import 'firebase/auth';
 
 import './App.scss';
 
-import Auth from '../components/pages/Auth/Auth';
 import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
+
+import Auth from '../components/pages/Auth/Auth';
+import NewSong from '../components/pages/NewSong/NewSong';
+import Set from '../components/pages/Set/Set';
+import SingleSong from '../components/pages/SingleSong/SingleSong';
+import Songs from '../components/pages/Songs/Songs';
 
 import fbConnection from '../helpers/data/connection';
 
@@ -35,6 +40,10 @@ class App extends React.Component {
       <div className="App">
         <MyNavbar />
         <Auth />
+        <NewSong />
+        <Set />
+        <SingleSong />
+        <Songs />
       </div>
     );
   }
