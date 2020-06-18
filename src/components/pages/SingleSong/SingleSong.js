@@ -29,7 +29,6 @@ class SingleSong extends React.Component {
               <p className="card-text">Album: {song.albumTitle}</p>
               <p className="card-text">Artist: {song.artist}</p>
               <p className="card-text">Release Year: {song.releaseYear}</p>
-              <p className="card-text"></p>
             </div>
           </div>
           </div>
