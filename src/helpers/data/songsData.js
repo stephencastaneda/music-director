@@ -22,4 +22,7 @@ const getAllSongs = () => new Promise((resolve, reject) => {
 
 const getSingleSong = (songId) => axios.get(`${baseUrl}/songs/${songId}.json`);
 
-export default { getAllSongs, getSingleSong };
+const postSong = (newSong) => axios.post(`${baseUrl}/songs.json`, newSong);
+
+
+export default { getAllSongs, getSingleSong, postSong };
