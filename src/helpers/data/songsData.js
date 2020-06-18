@@ -24,5 +24,12 @@ const getSingleSong = (songId) => axios.get(`${baseUrl}/songs/${songId}.json`);
 
 const postSong = (newSong) => axios.post(`${baseUrl}/songs.json`, newSong);
 
+const deleteSong = (songId) => axios.delete(`${baseUrl}/songs/${songId}.json`);
 
-export default { getAllSongs, getSingleSong, postSong };
+
+export default {
+  getAllSongs,
+  getSingleSong,
+  postSong,
+  deleteSong,
+};

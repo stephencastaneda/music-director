@@ -20,10 +20,16 @@ class Songs extends React.Component {
     this.getSongs();
   }
 
+  removeSong = (songId) => {
+    songsData.deleteSong(songId)
+      .then(() => this.getSongs())
+      .catch((err) => console.error('unable to delete songs: ', err));
+  }
+
   render() {
     const { songs } = this.state;
     const buildSongList = songs.map((song) => (
-      <SongList key={song.id} song={song}/>
+      <SongList key={song.id} song={song} removeSong={this.removeSong}/>
     ));
     return (
       <div className="Songs mx-auto">
