@@ -19,10 +19,20 @@ class SingleSong extends React.Component {
   render() {
     const { song } = this.state;
     return (
-      <div className="SingleSong">
-        <h1>SingleSong</h1>
-        <p>{song.albumTitle}</p>
-      </div>
+      <div className="col-md-4 mt-4 mx-auto SingleSong">
+        <div className="card profile-card-5">
+          <div className="card-img-block">
+            <img className="card-img-top" src={song.albumImage} alt="album cover" />
+          </div>
+            <div className="card-body pt-0">
+              <h5 className="card-title">{song.songTitle}</h5>
+              <p className="card-text">Album: {song.albumTitle}</p>
+              <p className="card-text">Artist: {song.artist}</p>
+              <p className="card-text">Release Year: {song.releaseYear}</p>
+              <p className="card-text"></p>
+            </div>
+          </div>
+          </div>
     );
   }
 }
