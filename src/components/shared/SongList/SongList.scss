@@ -12,9 +12,19 @@
   font-size: 10px;
 }
 
+.song-edit-btn {
+  display: none;
+  font-size: 10px;
+}
+
 .list-group:hover .song-delete-btn {
   display: block;
   position: relative;
+}
+
+.list-group:hover .song-edit-btn {
+  position: absolute;
+  display: inline-block;
 }
 
 // .link-tag:hover {
