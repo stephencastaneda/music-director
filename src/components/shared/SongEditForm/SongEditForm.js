@@ -14,8 +14,8 @@ class SongEditForm extends React.Component {
 
     componentDidMount() {
       const { songs } = this.props;
-      console.log(songs.id);
-      songsData.getSingleSong()
+      const editId = songs.id;
+      songsData.getSingleSong(editId)
         .then((response) => {
           const song = response.data;
           this.setState({
@@ -86,8 +86,7 @@ class SongEditForm extends React.Component {
       } = this.state;
 
       return (
-        <div className="NewSong col-12 text-white">
-        <h1>New Song</h1>
+        <div className="EditSong col-12 text-black">
         <form className="col-6 offset-3 text-left">
           <div className="form-group">
             <label htmlFor="song-artist">Artist</label>

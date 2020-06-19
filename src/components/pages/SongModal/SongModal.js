@@ -1,4 +1,4 @@
-import React, { useState, useParams } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Modal,
@@ -10,24 +10,24 @@ import {
 import SongEditForm from '../../shared/SongEditForm/SongEditForm';
 
 const ModalExample = (props) => {
+  console.log(props);
   const {
     buttonLabel,
     className,
-    song,
+    songs,
   } = props;
 
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
 
-
   return (
     <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+      <Button color="danger" className="btn btn-danger song-edit-btn" onClick={toggle}><i className="fas fa-pencil-alt"></i></Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}>Edit Song</ModalHeader>
         <ModalBody>
-          <SongEditForm songs={song}/>
+          <SongEditForm songs={songs}/>
       </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
