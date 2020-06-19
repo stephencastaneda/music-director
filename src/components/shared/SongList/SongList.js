@@ -18,7 +18,7 @@ class SongList extends React.Component {
           <li className="list-group-item d-flex justify-content-between align-items-center">
           <Link to={singleLink} className="list-group-item-action link-tag">{song.songTitle} - {song.artist}</Link>
           {/* <button className="btn btn-danger song-edit-btn" onClick={openSongModal}><i className="fas fa-pencil-alt"></i></button> */}
-          <SongModal song={song}/>
+          <SongModal songs={song}/>
           <button className="btn btn-danger song-delete-btn" onClick={() => removeSong(song.id)}><i className="fas fa-trash-alt"></i></button>
           </li>
         </ul>
