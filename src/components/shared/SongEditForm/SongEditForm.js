@@ -13,8 +13,9 @@ class SongEditForm extends React.Component {
     }
 
     componentDidMount() {
-      // const editId = this.props.match.params.songsId;
-      songsData.getSingleSong('song25')
+      const { songs } = this.props;
+      console.log(songs.id);
+      songsData.getSingleSong()
         .then((response) => {
           const song = response.data;
           this.setState({

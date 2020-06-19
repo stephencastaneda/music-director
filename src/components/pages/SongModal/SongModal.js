@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useParams } from 'react';
 import {
   Button,
   Modal,
@@ -13,11 +13,13 @@ const ModalExample = (props) => {
   const {
     buttonLabel,
     className,
+    song,
   } = props;
 
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
+
 
   return (
     <div>
@@ -25,7 +27,7 @@ const ModalExample = (props) => {
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
-          <SongEditForm />
+          <SongEditForm songs={song}/>
       </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
