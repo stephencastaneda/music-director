@@ -26,10 +26,13 @@ const postSong = (newSong) => axios.post(`${baseUrl}/songs.json`, newSong);
 
 const deleteSong = (songId) => axios.delete(`${baseUrl}/songs/${songId}.json`);
 
+const putSong = (songId, updatedSong) => axios.put(`${baseUrl}/songs/${songId}.json`, updatedSong);
+
 
 export default {
   getAllSongs,
   getSingleSong,
   postSong,
   deleteSong,
+  putSong,
 };
