@@ -42,8 +42,8 @@ class SingleViewEditModal extends React.Component {
      return (
     <div>
       <Button color="warning" onClick={this.toggle}><i className="fas fa-pencil-alt"></i></Button>
-      <Modal isOpen={modal} className={className}>
-        <ModalHeader>Edit Song</ModalHeader>
+      <Modal isOpen={modal} toggle={this.toggle} className={className}>
+        <ModalHeader toggle={this.toggle}>Edit Song</ModalHeader>
         <ModalBody>
           <SingleSongEditForm song={song} updateAfterEdit={this.updateAfterEdit}/>
       </ModalBody>
