@@ -12,10 +12,16 @@ class SongEditForm extends React.Component {
       songTitle: '',
     }
 
+    getSongs = () => {
+      songsData.getAllSongs()
+        .then((songs) => this.setState({ songs }))
+        .catch((err) => console.error('unable to get songs: ', err));
+    }
+
     componentDidMount() {
       const { songs } = this.props;
-      console.log(songs.id);
-      songsData.getSingleSong()
+      const editId = songs.id;
+      songsData.getSingleSong(editId)
         .then((response) => {
           const song = response.data;
           this.setState({
@@ -56,7 +62,9 @@ class SongEditForm extends React.Component {
 
     updateSong = (e) => {
       e.preventDefault();
-      const { songId } = this.props.match.params;
+      this.props.toggle();
+      const { songs } = this.props;
+      const songId = songs.id;
       const {
         albumImage,
         albumTitle,
@@ -72,11 +80,12 @@ class SongEditForm extends React.Component {
         songTitle,
       };
       songsData.putSong(songId, updatedSong)
-        .then(() => this.props.history.push('/songs'))
+        .then(() => this.props.getSongs())
         .catch((err) => console.error('unable to save song: ', err));
     }
 
     render() {
+      const { setModal } = this.props;
       const {
         albumImage,
         albumTitle,
@@ -86,8 +95,7 @@ class SongEditForm extends React.Component {
       } = this.state;
 
       return (
-        <div className="NewSong col-12 text-white">
-        <h1>New Song</h1>
+        <div className="EditSong col-12 text-black">
         <form className="col-6 offset-3 text-left">
           <div className="form-group">
             <label htmlFor="song-artist">Artist</label>
@@ -139,7 +147,7 @@ class SongEditForm extends React.Component {
               onChange={this.imageChange}
             />
           </div>
-         <button className="btn btn-primary" onClick={this.updateSong}>Update Song</button>
+         <button className="btn btn-primary" onClick={this.updateSong} >Update Song</button>
         </form>
       </div>
       );

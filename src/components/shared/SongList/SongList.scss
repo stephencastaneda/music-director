@@ -19,12 +19,15 @@
 
 .list-group:hover .song-delete-btn {
   display: block;
-  position: relative;
+  position: absolute;
+  left: 0;
 }
 
 .list-group:hover .song-edit-btn {
-  position: absolute;
-  display: inline-block;
+  display: block;
+  position: relative;
+  right: 0%;
+  margin-left: 5px;
 }
 
 // .link-tag:hover {

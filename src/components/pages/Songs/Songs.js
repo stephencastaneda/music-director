@@ -30,7 +30,7 @@ class Songs extends React.Component {
   render() {
     const { songs } = this.state;
     const buildSongList = songs.map((song) => (
-      <SongList key={song.id} song={song} removeSong={this.removeSong}/>
+      <SongList key={song.id} song={song} removeSong={this.removeSong} getSongs={this.getSongs}/>
     ));
     return (
       <div className="Songs mx-auto">
