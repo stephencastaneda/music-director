@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SingleViewModalEdit from '../SingleViewModalEdit/SingleViewModalEdit';
+
 import songsData from '../../../helpers/data/songsData';
 
 import './SingleSong.scss';
@@ -9,11 +11,19 @@ class SingleSong extends React.Component {
     song: {},
   }
 
-  componentDidMount() {
+  getSong = () => {
     const { songId } = this.props.match.params;
     songsData.getSingleSong(songId)
-      .then((response) => this.setState({ song: response.data }))
+      .then((response) => {
+        const song = response.data;
+        song.id = songId;
+        this.setState({ song });
+      })
       .catch((err) => console.error('unable to get single song: ', err));
+  }
+
+  componentDidMount() {
+    this.getSong();
   }
 
   removeSong = () => {
@@ -38,6 +48,7 @@ class SingleSong extends React.Component {
               <p className="card-text">Release Year: {song.releaseYear}</p>
             </div>
             <button className="btn btn-danger" onClick={this.removeSong}><i className="fas fa-trash-alt"></i></button>
+            <SingleViewModalEdit song={song} getSong={this.getSong}/>
           </div>
           </div>
     );
