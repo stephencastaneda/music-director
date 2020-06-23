@@ -15,9 +15,18 @@ const getAllSetList = (setId) => new Promise((resolve, reject) => {
         .then((songs) => {
           setSongData.getAllSetSongsBySetId(setId)
             .then((setSongs) => {
-              console.log(sets);
-              console.log(songs);
-              console.log(setSongs);
+              const finalSets = [];
+              sets.forEach((set) => {
+                const newSet = { ...set };
+                newSet.songs = [];
+                const selectedSetSongs = setSongs.filter((x) => x.setId === set.id);
+                selectedSetSongs.forEach((selectedSetSong) => {
+                  const selectedSong = songs.find((x) => x.id === selectedSetSong.songId);
+                  newSet.songs.push(selectedSong);
+                });
+                finalSets.push(newSet);
+              });
+              resolve(finalSets);
             });
         });
     })
