@@ -3,9 +3,11 @@ import React from 'react';
 import './Songs.scss';
 
 import songsData from '../../../helpers/data/songsData';
+
 import SongList from '../../shared/SongList/SongList';
 
 import NewSongModal from '../NewSongModal/NewSongModal';
+
 
 class Songs extends React.Component {
   state = {
@@ -27,7 +29,6 @@ class Songs extends React.Component {
       .then(() => this.getSongs())
       .catch((err) => console.error('unable to delete songs: ', err));
   }
-
 
   render() {
     const { songs } = this.state;

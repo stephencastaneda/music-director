@@ -3,9 +3,8 @@ import apiKeys from '../apiKeys.json';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-
 const getAllSets = () => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/sets.json`)
+  axios.get(`${baseUrl}/set.json`)
     .then((response) => {
       const duhSets = response.data;
       const sets = [];
