@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './SetCard.scss';
 
 class SetCard extends React.Component {
@@ -8,8 +10,9 @@ class SetCard extends React.Component {
 
     const buildSetSongs = () => set.songs.map((song) => {
       if (song && song.songTitle) {
+        const singleLink = `/songs/${song.id}`;
         return (
-        <li>{song.songTitle}</li>
+        <Link songs={song} to={singleLink} className="list-group-item-action link-tag">{song.songTitle}</Link>
         );
       }
       return '';
