@@ -13,7 +13,7 @@ const getAllSetList = (setId) => new Promise((resolve, reject) => {
     .then((sets) => {
       songsData.getAllSongs()
         .then((songs) => {
-          setSongData.getAllSetSongsBySetId(setId)
+          setSongData.getAllSetSongs(setId)
             .then((setSongs) => {
               const finalSets = [];
               sets.forEach((set) => {

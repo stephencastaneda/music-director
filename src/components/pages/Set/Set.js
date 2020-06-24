@@ -25,7 +25,7 @@ class Set extends React.Component {
 
   removeSet = (setId) => {
     smash.completelyRemoveSet(setId)
-      .then(() => this.getSets())
+      .then(() => this.getSets(setId))
       .catch((err) => console.error('unable to delete set: ', err));
   }
 
