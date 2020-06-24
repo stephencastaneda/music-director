@@ -19,4 +19,7 @@ const getAllSetSongsBySetId = (setId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllSetSongsBySetId };
+const deleteSetSong = (setSongId) => axios.delete(`${baseUrl}/setSongs/${setSongId}.json`);
+
+
+export default { getAllSetSongsBySetId, deleteSetSong };

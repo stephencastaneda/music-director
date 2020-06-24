@@ -19,4 +19,7 @@ const getAllSets = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllSets };
+const deleteSet = (setId) => axios.delete(`${baseUrl}/set/${setId}.json`);
+
+
+export default { getAllSets, deleteSet };

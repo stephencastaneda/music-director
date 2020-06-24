@@ -33,7 +33,17 @@ const getAllSetList = (setId) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllSetList };
+const completelyRemoveSet = (setId) => new Promise((resolve, reject) => {
+  setData.deleteSet(setId)
+    .then(() => {
+      setSongData.getAllSetSongsBySetId(setId)
+        .then((songs) => {
+          songs.forEach((song) => setSongData.deleteSetSong(song.id));
+          resolve();
+        });
+    });
+});
+export default { getAllSetList, completelyRemoveSet };
 // get all Songs
 
 // get all sets

@@ -1,11 +1,10 @@
 import React from 'react';
 
+import smash from '../../../helpers/data/smash';
+
 import setsData from '../../../helpers/data/setData';
 
 import SetCard from '../../shared/SetCard/SetCard';
-
-import smash from '../../../helpers/data/smash';
-
 
 import './Set.scss';
 
@@ -24,10 +23,16 @@ class Set extends React.Component {
     this.getSets();
   }
 
+  removeSet = (setId) => {
+    smash.completelyRemoveSet(setId)
+      .then(() => this.getSets())
+      .catch((err) => console.error('unable to delete set: ', err));
+  }
+
   render() {
     const { sets } = this.state;
     const buildSetCards = sets.map((set) => (
-      <SetCard key={set.id} set={set} />
+      <SetCard key={set.id} set={set} removeSet={this.removeSet} getAllSetList={this.getAllSetList}/>
     ));
     return (
       <div className="Set">
