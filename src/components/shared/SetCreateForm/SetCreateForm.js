@@ -4,6 +4,7 @@ import { Multiselect } from 'multiselect-react-dropdown';
 import moment from 'moment';
 
 import songsData from '../../../helpers/data/songsData';
+import setSongsData from '../../../helpers/data/setSongData';
 
 
 import './SetCreateForm.scss';
@@ -15,6 +16,7 @@ class SetCreateForm extends React.Component {
     Date: '',
     songs: [],
     setSongs: '',
+    selectedValues: '',
   }
 
   getAllSongs = () => {
@@ -37,6 +39,11 @@ class SetCreateForm extends React.Component {
     this.setState({ Date: e.target.value });
   }
 
+  // songSelectChange = (e) => {
+  //   // e.preventDefault();
+  //   this.setState({ selectedValues: e.target.options });
+  // }
+
   saveSet = (e) => {
     e.preventDefault();
     this.props.toggle();
@@ -54,6 +61,12 @@ class SetCreateForm extends React.Component {
       .catch((err) => console.error('unable to save set: ', err));
   }
 
+  // const newSetSong = {
+  //   songId:
+  //   setId:
+  // };
+
+
   render() {
     const {
       setTitle,
@@ -63,8 +76,7 @@ class SetCreateForm extends React.Component {
 
     const songTitles = [];
     for (let i = 0; i < songs.length; i += 1) {
-      songTitles.push({ name: songs[i].songTitle, id: i });
-      console.log(songs[i]);
+      songTitles.push({ name: songs[i].songTitle, id: songs[i].id });
     }
     console.log('song titles', songTitles);
     return (
@@ -93,10 +105,11 @@ class SetCreateForm extends React.Component {
         </div>
         <div className="form-group">
         <Multiselect
-          autoComplete="none"
+          autoComplete="new-password"
           options={songTitles} // Options to display in the dropdown
+          selectedValues={this.state.selectedValues}
           // selectedValues={th} // Preselected value to persist in dropdown
-          // onSelect={songs.songTitle} // Function will trigger on select event
+          onSelect={this.songSelectChange} // Function will trigger on select event
           // onRemove={songs.songTitle} // Function will trigger on remove event
           displayValue="name" // Property name to display in the dropdown options
         />
