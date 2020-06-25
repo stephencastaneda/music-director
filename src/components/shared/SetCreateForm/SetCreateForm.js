@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Multiselect } from 'multiselect-react-dropdown';
+// import { Multiselect } from 'multiselect-react-dropdown';
 import moment from 'moment';
 
 import songsData from '../../../helpers/data/songsData';
@@ -16,7 +16,6 @@ class SetCreateForm extends React.Component {
     Date: '',
     songs: [],
     setSongs: '',
-    selectedValues: '',
   }
 
   getAllSongs = () => {
@@ -37,6 +36,10 @@ class SetCreateForm extends React.Component {
   dateChange = (e) => {
     e.preventDefault();
     this.setState({ Date: e.target.value });
+  }
+
+  wasFulfillingChange = (e) => {
+    this.setState({ setSongId: e.target.checked });
   }
 
   // songSelectChange = (e) => {
@@ -74,11 +77,11 @@ class SetCreateForm extends React.Component {
       songs,
     } = this.state;
 
-    const songTitles = [];
-    for (let i = 0; i < songs.length; i += 1) {
-      songTitles.push({ name: songs[i].songTitle, id: songs[i].id });
-    }
-    console.log('song titles', songTitles);
+    // const songTitles = [];
+    // for (let i = 0; i < songs.length; i += 1) {
+    //   songTitles.push({ name: songs[i].songTitle, id: songs[i].id });
+    // }
+    // console.log('song titles', songTitles);
     return (
       <div className="NewSet col-12 text-black">
       <form className="col-6 offset-3 text-left">
@@ -104,7 +107,7 @@ class SetCreateForm extends React.Component {
           />
         </div>
         <div className="form-group">
-        <Multiselect
+        {/* <Multiselect
           autoComplete="new-password"
           options={songTitles} // Options to display in the dropdown
           selectedValues={this.state.selectedValues}
@@ -112,7 +115,7 @@ class SetCreateForm extends React.Component {
           onSelect={this.songSelectChange} // Function will trigger on select event
           // onRemove={songs.songTitle} // Function will trigger on remove event
           displayValue="name" // Property name to display in the dropdown options
-        />
+        /> */}
         </div>
         <button className="btn btn-primary" onClick={this.saveSet}>Save Set</button>
       </form>
