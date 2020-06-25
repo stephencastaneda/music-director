@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import moment from 'moment';
+
 import './SetCard.scss';
 
 class SetCard extends React.Component {
@@ -23,6 +25,7 @@ class SetCard extends React.Component {
         <div className="card">
             <div className="card-body">
               <h5 className="card-title">{set.setTitle}</h5>
+              <p>{moment(set.Date).format('MM/DD/YYYY')}</p>
             </div>
               <ul className="list-group list-group-flush">
                   {buildSetSongs()}

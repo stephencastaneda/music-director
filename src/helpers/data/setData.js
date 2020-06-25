@@ -19,4 +19,7 @@ const getAllSets = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllSets };
+const postSet = (newSet) => axios.post(`${baseUrl}/set.json`, newSet);
+
+
+export default { getAllSets, postSet };
