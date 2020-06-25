@@ -4,6 +4,8 @@ import smash from '../../../helpers/data/smash';
 
 import setsData from '../../../helpers/data/setData';
 
+import SetCreateModal from '../SetCreateModal/SetCreateModal';
+
 import SetCard from '../../shared/SetCard/SetCard';
 
 import './Set.scss';
@@ -36,7 +38,7 @@ class Set extends React.Component {
     ));
     return (
       <div className="Set">
-        <h1>Set</h1>
+        <SetCreateModal getSets={this.getSets}/>
         <div className="d-flex flex-wrap">
           {buildSetCards}
         </div>
