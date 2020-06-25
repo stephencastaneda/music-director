@@ -19,7 +19,12 @@ const getAllSets = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+
 const postSet = (newSet) => axios.post(`${baseUrl}/set.json`, newSet);
 
 
-export default { getAllSets, postSet };
+const deleteSet = (setId) => axios.delete(`${baseUrl}/set/${setId}.json`);
+
+
+export default { getAllSets, deleteSet, postSet };
+
