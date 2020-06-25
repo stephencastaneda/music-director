@@ -9,6 +9,8 @@ class SetCreateForm extends React.Component {
   state = {
     setTitle: '',
     Date: '',
+    songs: [],
+    setSongs: '',
   }
 
   setTitleChange = (e) => {
@@ -36,6 +38,15 @@ class SetCreateForm extends React.Component {
     setData.postSet(newSet)
       .then(() => this.props.getSets())
       .catch((err) => console.error('unable to save set: ', err));
+
+    const setSong = {
+       setId,
+       songId,
+    };
+    setSongsData.postSetSong(newSetSong)
+    .then(() => this.props.getSets()) 
+    .catch((err) => console.error('unable to save set songs: ', err))
+    }
   }
 
   render() {

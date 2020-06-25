@@ -7,8 +7,6 @@ import moment from 'moment';
 
 import smash from '../../../helpers/data/smash';
 
-
-
 import './SetCard.scss';
 
 class SetCard extends React.Component {
@@ -32,7 +30,7 @@ class SetCard extends React.Component {
         <div className="card">
             <div className="card-body">
               <h5 className="card-title">{set.setTitle}</h5>
-              <p>{moment(set.Date).format('MM/DD/YYYY')}</p>
+              <p>{moment(set.Date).format('MMMM Do YYYY')}</p>
             </div>
               <ul className="list-group list-group-flush">
                   {buildSetSongs()}
