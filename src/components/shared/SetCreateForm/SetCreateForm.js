@@ -15,7 +15,7 @@ class SetCreateForm extends React.Component {
     setTitle: '',
     Date: '',
     songs: [],
-    setSongs: '',
+    setSongs: [],
     selectedValues: '',
   }
 
@@ -39,10 +39,12 @@ class SetCreateForm extends React.Component {
     this.setState({ Date: e.target.value });
   }
 
-  // songSelectChange = (e) => {
-  //   // e.preventDefault();
-  //   this.setState({ selectedValues: e.target.options });
-  // }
+  songSelectChange = (selectedList, selectedItem) => {
+    this.setState({ setSongs: selectedList });
+
+    console.log('selected list', selectedList);
+    console.log('selected item', selectedItem);
+  }
 
   saveSet = (e) => {
     e.preventDefault();
