@@ -1,89 +1,89 @@
 {
-	"Resource1": {
+	"resource1": {
       "resourceName": "I Need You Recording",
       "typeId": "type1",
 			"songId": "song1",
 			"url": "https://www.youtube.com/watch?v=ku33rcu8YSg"
     },
-	"Resource2": {
+	"resource2": {
       "resourceName": "Your Great Name Recording",
       "typeId": "type1",
 			"songId": "song2",
 			"url": "https://www.youtube.com/watch?v=EgrNKtuODaM"
     },
-	"Resource3": {
+	"resource3": {
       "resourceName": "Great Is The Day Recording",
       "typeId": "type1",
 			"songId": "song3",
 			"url": "https://www.youtube.com/watch?v=suTtZ41G658"
     },
-	"Resource4": {
+	"resource4": {
       "resourceName": "Psalms 117 Recording",
       "typeId": "type1",
 			"songId": "song4",
 			"url": "https://www.youtube.com/watch?v=mG18K5Nuxzc"
     },
-	"Resource5": {
+	"resource5": {
       "resourceName": "Clap Your Hands",
       "typeId": "type1",
 			"songId": "song5",
 			"url": "https://www.youtube.com/watch?v=p5sRCDXMtRs"
     },
-	"Resource6": {
+	"resource6": {
       "resourceName": "When The Saints Go To Worship",
       "typeId": "type2",
 			"songId": "song11",
 			"url": "https://www.lpmbc.org/UserFiles/Ministries/AVoices/Docs/Lyrics/When_The_Saints_Go_To_Worship_Benita_Washington.pdf"
     },
-	"Resource7": {
+	"resource7": {
       "resourceName": "Having You There Lyrics",
       "typeId": "type2",
 			"songId": "song12",
 			"url": "https://genius.com/The-mississippi-mass-choir-having-you-there-lyrics"
     },
-	"Resource8": {
+	"resource8": {
       "resourceName": "Who's On The Lord's Side Song Chart",
       "typeId": "type3",
 			"songId": "song15",
 			"url": "https://chordify.net/chords/timothy-wrightwhos-on-the-lords-side-theblssingers"
     },
-	"Resource9": {
+	"resource9": {
       "resourceName": "Let The Praise Begin - Tenor Recording",
       "typeId": "mp3",
 			"songId": "song16",
 			"url": "https://www.youtube.com/watch?v=6KV4glz5FXY"
     },
-	"Resource10": {
+	"resource10": {
       "resourceName": "Let The Praise Begin - Soprano Recording",
       "typeId": "mp3",
 			"songId": "song16",
 			"url": "https://www.youtube.com/watch?v=6KV4glz5FXY"
     },
-	"Resource11": {
+	"resource11": {
       "resourceName": "Better - Alto Recording",
       "typeId": "mp3",
 			"songId": "song21",
 			"url": "https://www.youtube.com/watch?v=1nrcZQliOGI"
     },
-	"Resource12": {
+	"resource12": {
       "resourceName": "God's Grace Lyrics",
       "typeId": "type2",
 			"songId": "song25",
 			"url": "https://www.azlyrics.com/lyrics/lutherbarnes/godsgrace.html"
     },
-	"Resource13": {
+	"resource13": {
       "resourceName": "God's Grade Song Chart",
       "typeId": "type3",
 			"songId": "song25",
 			"url": "https://www.praisecharts.com/songs/details/20273/god-is-great-sheet-music/piano-vocal-lead-sheet"
     },
-	"Resource14": {
+	"resource14": {
       "resourceName": "Mighty Good God Recording",
       "typeId": "type1",
 			"songId": "song26",
 			"url": "https://www.youtube.com/watch?v=MCqk0YtnO5A"
     },
-	"Resource15": {
+	"resource15": {
       "resourceName": "He's An On Time God Recording",
       "typeId": "type1",
 			"songId": "song27",

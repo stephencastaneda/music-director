@@ -1,14 +1,17 @@
 import React from 'react';
 
 import SingleViewModalEdit from '../SingleViewModalEdit/SingleViewModalEdit';
+import SongResourcesModal from '../SongResourcesModal/SongResourcesModal';
 
 import songsData from '../../../helpers/data/songsData';
+import resourcesData from '../../../helpers/data/resourcesData';
 
 import './SingleSong.scss';
 
 class SingleSong extends React.Component {
   state = {
     song: {},
+    resources: [],
   }
 
   getSong = () => {
@@ -22,8 +25,20 @@ class SingleSong extends React.Component {
       .catch((err) => console.error('unable to get single song: ', err));
   }
 
+  getResource = () => {
+    const { songId } = this.props.match.params;
+    console.log('the song id', songId);
+    resourcesData.getAllResourcesBySongId(songId)
+      .then((resources) => {
+        // console.log('my resources', response);
+        this.setState({ resources });
+      })
+      .catch((err) => console.error('unable to get resource: ', err));
+  }
+
   componentDidMount() {
     this.getSong();
+    this.getResource();
   }
 
   removeSong = () => {
@@ -34,7 +49,8 @@ class SingleSong extends React.Component {
   }
 
   render() {
-    const { song } = this.state;
+    const { song, resources } = this.state;
+
     return (
       <div className="col-md-5 mt-4 mx-auto SingleSong">
         <div className="card profile-card-5">
@@ -49,6 +65,7 @@ class SingleSong extends React.Component {
             </div>
             <button className="btn btn-danger" onClick={this.removeSong}><i className="fas fa-trash-alt"></i></button>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
+            <SongResourcesModal resources={resources} song={song}/>
           </div>
           </div>
     );
