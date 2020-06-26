@@ -53,8 +53,6 @@ class SongResourcesModal extends React.Component {
    // }
 
    removeResource = (resourcesId) => {
-     const { resources } = this.props;
-     console.log('the resources id', resources);
      resourceData.deleteResource(resourcesId)
        .then(() => console.log('deleted'))
        .catch((err) => console.error('unable to delete resource: ', err));
