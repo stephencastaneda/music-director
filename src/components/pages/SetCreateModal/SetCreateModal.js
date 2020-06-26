@@ -38,7 +38,7 @@ class SetCreateModal extends React.Component {
       <Modal isOpen={modal} toggle={this.toggle} className={className}>
         <ModalHeader toggle={this.toggle}>Create Set</ModalHeader>
         <ModalBody>
-          <SetCreateForm songs={songs} toggle={this.toggle} getSets={this.props.getSets}/>
+          <SetCreateForm songs={songs} toggle={this.toggle} getSets={this.props.getSets} getAllSongs={this.getAllSongs}/>
       </ModalBody>
       </Modal>
     </div>

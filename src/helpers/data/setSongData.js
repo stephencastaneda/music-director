@@ -38,4 +38,11 @@ const getAllSetSongsBySetId = (setId) => new Promise((resolve, reject) => {
 
 const deleteSetSong = (setSongsId) => axios.delete(`${baseUrl}/setSongs/${setSongsId}.json`);
 
-export default { getAllSetSongsBySetId, deleteSetSong, getAllSetSongs };
+const postSetSongs = (newSetSongs) => axios.post(`${baseUrl}/setSongs.json`, newSetSongs);
+
+export default {
+  getAllSetSongsBySetId,
+  deleteSetSong,
+  getAllSetSongs,
+  postSetSongs,
+};
