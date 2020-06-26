@@ -28,7 +28,6 @@ class SingleSong extends React.Component {
 
   getResource = () => {
     const { songId } = this.props.match.params;
-    console.log('the song id', songId);
     smash.getAllTypesWithResources(songId)
       .then((resources) => {
         // console.log('my resources', response);
