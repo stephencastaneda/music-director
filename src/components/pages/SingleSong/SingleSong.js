@@ -5,6 +5,7 @@ import SongResourcesModal from '../SongResourcesModal/SongResourcesModal';
 
 import songsData from '../../../helpers/data/songsData';
 import resourcesData from '../../../helpers/data/resourcesData';
+import smash from '../../../helpers/data/smash';
 
 import './SingleSong.scss';
 
@@ -28,7 +29,7 @@ class SingleSong extends React.Component {
   getResource = () => {
     const { songId } = this.props.match.params;
     console.log('the song id', songId);
-    resourcesData.getAllResourcesBySongId(songId)
+    smash.getAllTypesWithResources(songId)
       .then((resources) => {
         // console.log('my resources', response);
         this.setState({ resources });
