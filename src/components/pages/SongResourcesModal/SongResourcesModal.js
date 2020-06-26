@@ -8,7 +8,9 @@ import {
 } from 'reactstrap';
 
 import typeData from '../../../helpers/data/typeData';
+import resourceData from '../../../helpers/data/resourcesData';
 import smash from '../../../helpers/data/smash';
+import './SongResourcesModal.scss';
 
 class SongResourcesModal extends React.Component {
   state = {
@@ -43,6 +45,21 @@ class SongResourcesModal extends React.Component {
      this.props.getSong();
    }
 
+   //  removeSong = () => {
+   //   const { songId } = this.props.match.params;
+   //   songsData.deleteSong(songId)
+   //     .then(() => this.props.history.push('/songs'))
+   //     .catch((err) => console.error('unable to delete song: ', err));
+   // }
+
+   removeResource = (resourcesId) => {
+     const { resources } = this.props;
+     console.log('the resources id', resources);
+     resourceData.deleteResource(resourcesId)
+       .then(() => console.log('deleted'))
+       .catch((err) => console.error('unable to delete resource: ', err));
+   }
+
    render() {
      const {
        buttonLabel,
@@ -60,9 +77,10 @@ class SongResourcesModal extends React.Component {
      const buildResources = () => resources.map((resource) => {
        if (resource) {
          return (
-                  <div>
+                  <div className="resource-div">
                     {resource.resourceName}
                     <a href={resource.url} className="btn btn-dark" role="button" target="_blank"><i className={resource.icon.icon}></i></a>
+                    <button className="btn btn-danger resource-delete-button" onClick={this.removeResource}><i class="fas fa-ban"></i></button>
                   </div>
          );
        }

@@ -35,4 +35,6 @@ const getAllResources = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllResourcesBySongId, getAllResources };
+const deleteResource = (resourcesId) => axios.delete(`${baseUrl}/resources/${resourcesId}.json`);
+
+export default { getAllResourcesBySongId, getAllResources, deleteResource };
