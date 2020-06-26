@@ -23,20 +23,19 @@ class SongResourcesModal extends React.Component {
    };
    // const [modal, setModal] = useState(false);
 
-   getAllTypes = () => {
-     typeData.getAllTypesByTypeId()
-       .then((types) => {
-         // console.log('my resources', response);
-         this.setState({ types });
-       })
-       .catch((err) => console.error('unable to get types: ', err));
-   }
+   //  getAllTypes = () => {
+   //    typeData.getAllTypesByTypeId()
+   //      .then((types) => {
+   //        // console.log('my resources', response);
+   //        this.setState({ types });
+   //      })
+   //      .catch((err) => console.error('unable to get types: ', err));
+   //  }
 
 
-   componentDidMount() {
-     this.getAllTypes();
-     smash.getAllTypesWithResources('song1');
-   }
+   //  componentDidMount() {
+   //    this.getAllTypes();
+   //  }
    // const toggle = () => setModal(!modal);
 
    updateAfterEdit = () => {
@@ -58,18 +57,18 @@ class SongResourcesModal extends React.Component {
        types,
      } = this.state;
 
-     const buildResources = () => resources.map((resource) => (
-          <div>
-            {resource.resourceName}
-            <a href={resource.url} className="btn btn-dark" role="button" target="_blank"><i className={resource.icon.icon}></i></a>
-          </div>
-     ));
+     const buildResources = () => resources.map((resource) => {
+       if (resource) {
+         return (
+                  <div>
+                    {resource.resourceName}
+                    <a href={resource.url} className="btn btn-dark" role="button" target="_blank"><i className={resource.icon.icon}></i></a>
+                  </div>
+         );
+       }
+       return '';
+     });
 
-     /* //  const buildTypes = () => {
-    //    if (typeId === 'type1') {
-    //      return
-    //    }
-    //  )) */
      return (
     <div>
       <Button color="warning" onClick={this.toggle}><i class="fas fa-folder-open"></i></Button>
@@ -78,7 +77,6 @@ class SongResourcesModal extends React.Component {
         <ModalBody>
         <div className="d-flex flex-wrap">
           {buildResources()}
-          {/* {buildTypes()} */}
           </div>
       </ModalBody>
       </Modal>
