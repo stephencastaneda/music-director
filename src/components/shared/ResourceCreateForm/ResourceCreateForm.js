@@ -71,7 +71,7 @@ class ResourceCreateForm extends React.Component {
       songId: this.props.song.songId,
     };
     resourceData.postResource(newResource)
-      .then(() => this.getAllResources())
+      .then(() => this.getAllResources(this.props.song.songId))
       .catch((err) => console.error('unable to save resource: ', err));
   }
 
