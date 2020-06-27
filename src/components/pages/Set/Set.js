@@ -47,7 +47,7 @@ class Set extends React.Component {
     ));
     return (
       <div className="Set">
-        <SetCreateModal getSets={this.getSets} getAllSongs={this.getAllSongs}/>
+        <SetCreateModal sets={sets} getSets={this.getSets} getAllSongs={this.getAllSongs}/>
         <div className="d-flex flex-wrap">
           {buildSetCards}
         </div>
