@@ -1,7 +1,6 @@
 import React from 'react';
 
 import SingleViewModalEdit from '../SingleViewModalEdit/SingleViewModalEdit';
-import SongResourcesModal from '../SongResourcesModal/SongResourcesModal';
 
 import songsData from '../../../helpers/data/songsData';
 import resourcesData from '../../../helpers/data/resourcesData';
@@ -50,6 +49,17 @@ class SingleSong extends React.Component {
 
   render() {
     const { song, resources } = this.state;
+    const buildResources = () => resources.map((resource) => {
+      if (resource) {
+        return (
+                 <div>
+                   {resource.name}
+                   <button><a href={resource.url} className="btn btn-dark" role="button" target="_blank"><i className={resource.icon.icon}></i></a></button>
+                 </div>
+        );
+      }
+      return '';
+    });
 
     return (
       <div className="col-md-5 mt-4 mx-auto SingleSong">
@@ -62,12 +72,13 @@ class SingleSong extends React.Component {
               <p className="card-text">Album: {song.albumTitle}</p>
               <p className="card-text">Artist: {song.artist}</p>
               <p className="card-text">Release Year: {song.releaseYear}</p>
-            </div>
+              <div>{buildResources()}</div>
             <button className="btn btn-danger" onClick={this.removeSong}><i className="fas fa-trash-alt"></i></button>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
-            <SongResourcesModal resources={resources} song={song}/>
           </div>
           </div>
+          </div>
+
     );
   }
 }
