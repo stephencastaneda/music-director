@@ -77,7 +77,7 @@ class SingleSong extends React.Component {
               <div>{buildResources()}</div>
             <button className="btn btn-danger" onClick={this.removeSong}><i className="fas fa-trash-alt"></i></button>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
-            <ResourceCreateModal songId={song.id} getSong={this.getSong}/>
+            <ResourceCreateModal getResource={this.getResource} songId={song.id} getSong={this.getSong}/>
 
           </div>
           </div>

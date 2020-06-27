@@ -28,6 +28,7 @@ class ResourceCreateForm extends React.Component {
   }
 
   getAllResources = (songId) => {
+    console.log('song Id', songId);
     resourceData.getAllResourcesBySongId(songId)
       .then((resources) => this.setState({ resources }))
       .catch((err) => console.error('could not get resources: ', err));
@@ -71,7 +72,7 @@ class ResourceCreateForm extends React.Component {
       songId: this.props.song.songId,
     };
     resourceData.postResource(newResource)
-      .then(() => this.getAllResources(this.props.song.songId))
+      .then(() => this.props.getResource())
       .catch((err) => console.error('unable to save resource: ', err));
   }
 
