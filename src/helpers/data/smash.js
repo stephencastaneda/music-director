@@ -58,6 +58,7 @@ const getAllTypesWithResources = (songId) => new Promise((resolve, reject) => {
             name: resource.resourceName,
             url: resource.url,
             icon: types.find((type) => resource.typeId === type.id),
+            resourcesId: resource.id,
           }));
           console.log('the resource type', resourceType);
           resolve(resourceType);

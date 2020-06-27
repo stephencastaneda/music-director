@@ -49,6 +49,14 @@ class SingleSong extends React.Component {
       .catch((err) => console.error('unable to delete song: ', err));
   }
 
+  removeResource = (resourcesId) => {
+    const rId = resourcesId.currentTarget.id;
+    console.log('resource', rId);
+    resourcesData.deleteResource(rId)
+      .then(() => this.getResource())
+      .catch((err) => console.error('unable to delete song: ', err));
+  }
+
   render() {
     const { song, resources } = this.state;
     const buildResources = () => resources.map((resource) => {
@@ -57,6 +65,7 @@ class SingleSong extends React.Component {
                  <div>
                    {resource.name}
                    <button><a href={resource.url} className="btn btn-dark" role="button" target="_blank"><i className={resource.icon.icon}></i></a></button>
+                  <button onClick={this.removeResource} id={resource.resourcesId} className="btn btn-danger float-left"><i class="fas fa-minus"></i></button>
                  </div>
         );
       }
