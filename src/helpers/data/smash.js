@@ -4,6 +4,8 @@ import apiKeys from '../apiKeys.json';
 import setData from './setData';
 import setSongData from './setSongData';
 import songsData from './songsData';
+import resourcesData from './resourcesData';
+import typesData from './typeData';
 
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
@@ -22,6 +24,7 @@ const getAllSetList = (setId) => new Promise((resolve, reject) => {
                 const selectedSetSongs = setSongs.filter((x) => x.setId === set.id);
                 selectedSetSongs.forEach((selectedSetSong) => {
                   const selectedSong = songs.find((x) => x.id === selectedSetSong.songId);
+                  selectedSong.setSongId = selectedSetSong.id;
                   newSet.songs.push(selectedSong);
                 });
                 finalSets.push(newSet);
@@ -43,8 +46,28 @@ const completelyRemoveSet = (setId) => new Promise((resolve, reject) => {
         });
     });
 });
-export default { getAllSetList, completelyRemoveSet };
-// get all Songs
+
+const getAllTypesWithResources = (songId) => new Promise((resolve, reject) => {
+  console.log('the song id', songId);
+  resourcesData.getAllResourcesBySongId(songId)
+    .then((resources) => {
+      const allResources = [];
+      typesData.getAllTypesByTypeId()
+        .then((types) => {
+          const resourceType = resources.map((resource) => ({
+            name: resource.resourceName,
+            url: resource.url,
+            icon: types.find((type) => resource.typeId === type.id),
+          }));
+          console.log('the resource type', resourceType);
+          resolve(resourceType);
+        });
+    })
+    .catch((err) => reject((err)));
+});
+
+export default { getAllSetList, completelyRemoveSet, getAllTypesWithResources };
+// get all Songspe
 
 // get all sets
 
