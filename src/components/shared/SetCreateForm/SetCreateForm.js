@@ -19,7 +19,6 @@ class SetCreateForm extends React.Component {
     selectedValues: '',
     songId: '',
     setId: '',
-    setSongs: '',
   }
 
   getAllSongs = () => {
@@ -119,6 +118,11 @@ class SetCreateForm extends React.Component {
           autoComplete="new-password"
           options={songTitles} // Options to display in the dropdown
           selectedValues={this.state.selectedValues}
+          id={this.id}
+          onSelect={this.onSelect} // Function will trigger on select event
+          // selectedValues={th} // Preselected value to persist in dropdown
+          onSelect={this.songSelectChange} // Function will trigger on select event
+          // onRemove={songs.songTitle} // Function will trigger on remove event
           displayValue="name" // Property name to display in the dropdown options
         />
         </div>
