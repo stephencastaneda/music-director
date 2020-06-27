@@ -1,6 +1,8 @@
 import React from 'react';
 
 import SingleViewModalEdit from '../SingleViewModalEdit/SingleViewModalEdit';
+import ResourceCreateModal from '../ResourceCreateModal/ResourceCreateModal';
+
 
 import songsData from '../../../helpers/data/songsData';
 import resourcesData from '../../../helpers/data/resourcesData';
@@ -75,6 +77,8 @@ class SingleSong extends React.Component {
               <div>{buildResources()}</div>
             <button className="btn btn-danger" onClick={this.removeSong}><i className="fas fa-trash-alt"></i></button>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
+            <ResourceCreateModal song={song} getSong={this.getSong}/>
+
           </div>
           </div>
           </div>
