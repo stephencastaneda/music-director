@@ -17,6 +17,8 @@ class SetCreateForm extends React.Component {
     songs: [],
     setSongs: [],
     selectedValues: '',
+    songId: '',
+    setId: '',
   }
 
   getAllSongs = () => {
@@ -52,6 +54,9 @@ class SetCreateForm extends React.Component {
     const {
       setTitle,
       Date,
+      songId,
+      setId,
+      setSongs,
     } = this.state;
 
     const newSet = {
@@ -60,13 +65,13 @@ class SetCreateForm extends React.Component {
     };
     setData.postSet(newSet)
       .then(() => this.props.getSets())
-      .catch((err) => console.error('unable to save set: ', err));
-  }
+      .catch((err) => console.error('unable to save set: ', err))
 
-  // const newSetSong = {
-  //   songId:
-  //   setId:
-  // };
+  const newSetSong = {
+    songId: setSongs.id,
+    setId: 
+  };
+  setSongsData.postSetSongs
 
 
   render() {
@@ -76,10 +81,13 @@ class SetCreateForm extends React.Component {
       songs,
     } = this.state;
 
+    // const songTitles = [];
+    // for (let i = 0; i < songs.length; i += 1) {
+    //   songTitles.push({ name: songs[i].songTitle, id: songs[i].id });
+    // }
+
     const songTitles = [];
-    for (let i = 0; i < songs.length; i += 1) {
-      songTitles.push({ name: songs[i].songTitle, id: songs[i].id });
-    }
+    songs.forEach
     console.log('song titles', songTitles);
     return (
       <div className="NewSet col-12 text-black">
