@@ -10,10 +10,12 @@ import SetCreateModal from '../SetCreateModal/SetCreateModal';
 import SetCard from '../../shared/SetCard/SetCard';
 
 import './Set.scss';
+import setSongData from '../../../helpers/data/setSongData';
 
 class Set extends React.Component {
   state = {
     sets: [],
+    setSongs: [],
     songs: [],
   }
 
@@ -23,6 +25,10 @@ class Set extends React.Component {
       .catch((err) => console.error('unable to get sets: ', err));
   }
 
+  getSetSongs = () => {
+    setSongData.getAllSetSongs()
+      .then((setSongs) => this.setState({ setSongs }))
+      .catch((err) => console.error('unable to get setSongs: ', err));
   getAllSongs = () => {
     songsData.getAllSongs()
       .then((songs) => this.setState({ songs }))
@@ -31,6 +37,7 @@ class Set extends React.Component {
 
   componentDidMount() {
     this.getSets();
+    this.getSetSongs();
     this.getAllSongs();
   }
 
@@ -40,10 +47,18 @@ class Set extends React.Component {
       .catch((err) => console.error('unable to delete set: ', err));
   }
 
+  removeSetSong = (setSongsId) => {
+    console.log('duh id', setSongsId);
+    setSongData.deleteSetSong(setSongsId)
+      .then(() => this.getSets())
+      .catch((err) => console.error('unable to delete set: ', err));
+  }
+
+
   render() {
     const { sets } = this.state;
     const buildSetCards = sets.map((set) => (
-      <SetCard key={set.id} set={set} removeSet={this.removeSet} getAllSetList={this.getAllSetList}/>
+      <SetCard key={set.id} set={set} removeSetSong={this.removeSetSong} removeSet={this.removeSet} getAllSetList={this.getAllSetList}/>
     ));
     return (
       <div className="Set">

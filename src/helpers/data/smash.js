@@ -24,6 +24,7 @@ const getAllSetList = (setId) => new Promise((resolve, reject) => {
                 const selectedSetSongs = setSongs.filter((x) => x.setId === set.id);
                 selectedSetSongs.forEach((selectedSetSong) => {
                   const selectedSong = songs.find((x) => x.id === selectedSetSong.songId);
+                  selectedSong.setSongId = selectedSetSong.id;
                   newSet.songs.push(selectedSong);
                 });
                 finalSets.push(newSet);

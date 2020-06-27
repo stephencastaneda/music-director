@@ -11,15 +11,17 @@ import './SetCard.scss';
 
 class SetCard extends React.Component {
   render() {
-    const { set } = this.props;
-    const { removeSet } = this.props;
+    const { removeSet, removeSetSong, set } = this.props;
 
 
     const buildSetSongs = () => set.songs.map((song) => {
       if (song && song.songTitle) {
         const singleLink = `/songs/${song.id}`;
         return (
+        <div>
         <Link songs={song} to={singleLink} className="list-group-item-action link-tag">{song.songTitle}</Link>
+        <button className="btn btn-danger" onClick={() => removeSetSong(song.setSongId)}><i class="fas fa-ban"></i></button>
+        </div>
         );
       }
       return '';
