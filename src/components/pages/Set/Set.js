@@ -39,6 +39,7 @@ class Set extends React.Component {
   }
 
   removeSetSong = (setSongsId) => {
+    console.log('duh id', setSongsId);
     setSongData.deleteSetSong(setSongsId)
       .then(() => this.getSets())
       .catch((err) => console.error('unable to delete set: ', err));
@@ -46,9 +47,9 @@ class Set extends React.Component {
 
 
   render() {
-    const { sets, setSongs } = this.state;
+    const { sets } = this.state;
     const buildSetCards = sets.map((set) => (
-      <SetCard key={set.id} set={set} setSongs={setSongs} removeSetSong={this.removeSetSong} removeSet={this.removeSet} getAllSetList={this.getAllSetList}/>
+      <SetCard key={set.id} set={set} removeSetSong={this.removeSetSong} removeSet={this.removeSet} getAllSetList={this.getAllSetList}/>
     ));
     return (
       <div className="Set">

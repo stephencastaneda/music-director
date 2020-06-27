@@ -9,8 +9,7 @@ import './SetCard.scss';
 
 class SetCard extends React.Component {
   render() {
-    const { set, setSongs } = this.props;
-    const { removeSet, removeSetSong } = this.props;
+    const { removeSet, removeSetSong, set } = this.props;
 
 
     const buildSetSongs = () => set.songs.map((song) => {
@@ -19,7 +18,7 @@ class SetCard extends React.Component {
         return (
         <div>
         <Link songs={song} to={singleLink} className="list-group-item-action link-tag">{song.songTitle}</Link>
-        <button className="btn btn-danger" onClick={() => removeSetSong(setSongs.id)}><i class="fas fa-ban"></i></button>
+        <button className="btn btn-danger" onClick={() => removeSetSong(song.setSongId)}><i class="fas fa-ban"></i></button>
         </div>
         );
       }
