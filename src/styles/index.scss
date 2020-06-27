@@ -4,6 +4,21 @@
 
 @import 'variables';
 
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Quattrocento');
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Anton|Signika:300');
+
+
 body {
   background-color: $favColor;
+  font-family: 'Signika';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bree Serif', cursive;
+}
+
+.myNavbar {
+  font-family: 'Bree Serif', cursive;
 }
