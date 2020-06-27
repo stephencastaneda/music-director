@@ -29,6 +29,8 @@ class Set extends React.Component {
     setSongData.getAllSetSongs()
       .then((setSongs) => this.setState({ setSongs }))
       .catch((err) => console.error('unable to get setSongs: ', err));
+  }
+
   getAllSongs = () => {
     songsData.getAllSongs()
       .then((songs) => this.setState({ songs }))
