@@ -3,6 +3,9 @@ import React from 'react';
 import smash from '../../../helpers/data/smash';
 
 import setsData from '../../../helpers/data/setData';
+import songsData from '../../../helpers/data/songsData';
+
+import SetCreateModal from '../SetCreateModal/SetCreateModal';
 
 import SetCard from '../../shared/SetCard/SetCard';
 
@@ -13,6 +16,7 @@ class Set extends React.Component {
   state = {
     sets: [],
     setSongs: [],
+    songs: [],
   }
 
   getSets = () => {
@@ -25,11 +29,16 @@ class Set extends React.Component {
     setSongData.getAllSetSongs()
       .then((setSongs) => this.setState({ setSongs }))
       .catch((err) => console.error('unable to get setSongs: ', err));
+  getAllSongs = () => {
+    songsData.getAllSongs()
+      .then((songs) => this.setState({ songs }))
+      .catch((err) => console.error('could not get all songs: ', err));
   }
 
   componentDidMount() {
     this.getSets();
     this.getSetSongs();
+    this.getAllSongs();
   }
 
   removeSet = (setId) => {
@@ -53,7 +62,7 @@ class Set extends React.Component {
     ));
     return (
       <div className="Set">
-        <h1>Set</h1>
+        <SetCreateModal getSets={this.getSets} getAllSongs={this.getAllSongs}/>
         <div className="d-flex flex-wrap">
           {buildSetCards}
         </div>
