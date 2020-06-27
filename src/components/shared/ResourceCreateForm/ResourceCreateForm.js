@@ -4,6 +4,7 @@ import moment from 'moment';
 
 import songsData from '../../../helpers/data/songsData';
 import setSongsData from '../../../helpers/data/setSongData';
+import resourceData from '../../../helpers/data/resourcesData';
 
 
 import './ResourceCreateForm.scss';
@@ -17,6 +18,7 @@ class ResourceCreateForm extends React.Component {
     url: '',
     types: [],
     checked: false,
+    resources: [],
   }
 
   getAllTypes = () => {
@@ -25,8 +27,15 @@ class ResourceCreateForm extends React.Component {
       .catch((err) => console.error('could not get all types: ', err));
   }
 
+  getAllResources = (songId) => {
+    resourceData.getAllResourcesBySongId(songId)
+      .then((resources) => this.setState({ resources }))
+      .catch((err) => console.error('could not get resources: ', err));
+  }
+
   componentDidMount() {
     this.getAllTypes();
+    this.getAllResources();
   }
 
   resourceNameChange = (e) => {
@@ -45,14 +54,27 @@ class ResourceCreateForm extends React.Component {
     this.setState({ selectedOption: e.target.checked });
   }
 
-  // saveResource = (e) => {
-  //   e.preventDefault();
-  //   this.props.toggle();
-  //   const {
-  //     resourceName,
-  //     url,
-  //     typeId,
-  //   } = this.state;
+  saveResource = (e) => {
+    e.preventDefault();
+    this.props.toggle();
+    const {
+      resourceName,
+      url,
+      typeId,
+      songId,
+    } = this.state;
+
+    const newResource = {
+      resourceName,
+      url,
+      typeId,
+      songId: this.props.song.songId,
+    };
+    resourceData.postResource(newResource)
+      .then(() => this.getAllResources())
+      .catch((err) => console.error('unable to save resource: ', err));
+  }
+
 
   render() {
     const {
@@ -62,6 +84,7 @@ class ResourceCreateForm extends React.Component {
       typeId,
       types,
     } = this.state;
+
 
     const buildTypeRadios = () => types.map((type) => (
       <div className="form-group form-check">

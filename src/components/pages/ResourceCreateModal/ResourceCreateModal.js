@@ -41,7 +41,7 @@ class ResourceCreateModal extends React.Component {
       <Modal isOpen={modal} toggle={this.toggle} className={className}>
         <ModalHeader toggle={this.toggle}>Add Song</ModalHeader>
         <ModalBody>
-          <ResourceCreateForm />
+          <ResourceCreateForm songId={this.props} song={this.props} toggle={this.toggle}/>
       </ModalBody>
       </Modal>
     </div>
