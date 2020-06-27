@@ -15,6 +15,10 @@ class SetCreateForm extends React.Component {
     setTitle: '',
     Date: '',
     songs: [],
+    setSongs: [],
+    selectedValues: '',
+    songId: '',
+    setId: '',
     setSongs: '',
   }
 
@@ -38,6 +42,24 @@ class SetCreateForm extends React.Component {
     this.setState({ Date: e.target.value });
   }
 
+  songSelectChange = (selectedList, selectedItem) => {
+    this.setState({ setSongs: selectedList });
+
+    console.log('selected list', selectedList);
+    console.log('selected item', selectedItem);
+  }
+
+  saveSetSongs = (setId) => {
+    const { setSongs } = this.state;
+    setSongs.forEach((setSong) => {
+      const newSetSong = {
+        songId: setSong.id,
+        setId,
+      };
+      setSongsData.postSetSongs(newSetSong);
+    });
+    this.props.getSets();
+  }
   wasFulfillingChange = (e) => {
     this.setState({ setSongId: e.target.checked });
   }
@@ -60,15 +82,9 @@ class SetCreateForm extends React.Component {
       Date,
     };
     setData.postSet(newSet)
-      .then(() => this.props.getSets())
+      .then((response) => this.saveSetSongs(response.data.name))
       .catch((err) => console.error('unable to save set: ', err));
   }
-
-  // const newSetSong = {
-  //   songId:
-  //   setId:
-  // };
-
 
   render() {
     const {
@@ -77,11 +93,11 @@ class SetCreateForm extends React.Component {
       songs,
     } = this.state;
 
-    // const songTitles = [];
-    // for (let i = 0; i < songs.length; i += 1) {
-    //   songTitles.push({ name: songs[i].songTitle, id: songs[i].id });
-    // }
-    // console.log('song titles', songTitles);
+    const songTitles = [];
+    songs.forEach((song) => {
+      songTitles.push({ name: song.songTitle, id: song.id });
+    });
+
     return (
       <div className="NewSet col-12 text-black">
       <form className="col-6 offset-3 text-left">
@@ -111,6 +127,8 @@ class SetCreateForm extends React.Component {
           autoComplete="new-password"
           options={songTitles} // Options to display in the dropdown
           selectedValues={this.state.selectedValues}
+          id={this.id}
+          onSelect={this.onSelect} // Function will trigger on select event
           // selectedValues={th} // Preselected value to persist in dropdown
           onSelect={this.songSelectChange} // Function will trigger on select event
           // onRemove={songs.songTitle} // Function will trigger on remove event
@@ -123,5 +141,6 @@ class SetCreateForm extends React.Component {
     );
   }
 }
+
 
 export default SetCreateForm;
