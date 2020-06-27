@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import { Multiselect } from 'multiselect-react-dropdown';
+import { Multiselect } from 'multiselect-react-dropdown';
 import moment from 'moment';
 
 import songsData from '../../../helpers/data/songsData';
@@ -60,14 +60,6 @@ class SetCreateForm extends React.Component {
     });
     this.props.getSets();
   }
-  wasFulfillingChange = (e) => {
-    this.setState({ setSongId: e.target.checked });
-  }
-
-  // songSelectChange = (e) => {
-  //   // e.preventDefault();
-  //   this.setState({ selectedValues: e.target.options });
-  // }
 
   saveSet = (e) => {
     e.preventDefault();
@@ -123,17 +115,12 @@ class SetCreateForm extends React.Component {
           />
         </div>
         <div className="form-group">
-        {/* <Multiselect
+        <Multiselect
           autoComplete="new-password"
           options={songTitles} // Options to display in the dropdown
           selectedValues={this.state.selectedValues}
-          id={this.id}
-          onSelect={this.onSelect} // Function will trigger on select event
-          // selectedValues={th} // Preselected value to persist in dropdown
-          onSelect={this.songSelectChange} // Function will trigger on select event
-          // onRemove={songs.songTitle} // Function will trigger on remove event
           displayValue="name" // Property name to display in the dropdown options
-        /> */}
+        />
         </div>
         <button className="btn btn-primary" onClick={this.saveSet}>Save Set</button>
       </form>
