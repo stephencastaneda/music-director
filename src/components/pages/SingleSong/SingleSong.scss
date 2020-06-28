@@ -48,3 +48,23 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+.resource-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+#resource-buttons {
+  position: relative;
+  top: -10px;
+}
+
+.resource-delete {
+  position: relative;
+  left: 5%;
+}
+
+.resource-delete:hover {
+  color: red;
+}

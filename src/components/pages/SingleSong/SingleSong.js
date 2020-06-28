@@ -76,10 +76,10 @@ class SingleSong extends React.Component {
     const buildResources = () => resources.map((resource) => {
       if (resource) {
         return (
-                 <div>
-                   {resource.name}
-                   <a href={resource.url} target="_blank"><i className={resource.icon.icon}></i></a>
-                  <div onClick={this.removeResource} id={resource.resourcesId} className="float-left"><i class="fas fa-minus"></i></div>
+                 <div className="resource-flex">
+                <div onClick={this.removeResource} id={resource.resourcesId}><i class="mr-2 resource-delete fas fa-minus-circle fa-lg"></i></div>
+                   <div className="resource-title">{resource.name}</div>
+                   <a className="ml-2 fa-2x" href={resource.url} target="_blank"><i id="resource-buttons"className={resource.icon.icon}></i></a>
                  </div>
         );
       }
