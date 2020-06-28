@@ -1,5 +1,12 @@
 import React from 'react';
 
+import {
+  UncontrolledCollapse,
+  Button,
+  CardBody,
+  Card,
+} from 'reactstrap';
+
 import SingleViewModalEdit from '../SingleViewModalEdit/SingleViewModalEdit';
 import ResourceCreateModal from '../ResourceCreateModal/ResourceCreateModal';
 
@@ -14,7 +21,12 @@ class SingleSong extends React.Component {
   state = {
     song: {},
     resources: [],
+    isOpen: false,
   }
+
+  toggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
 
   getSong = () => {
     const { songId } = this.props.match.params;
@@ -58,7 +70,9 @@ class SingleSong extends React.Component {
   }
 
   render() {
-    const { song, resources } = this.state;
+    const { song, resources, isOpen } = this.state;
+    const { buttonLabel, className } = this.props;
+
     const buildResources = () => resources.map((resource) => {
       if (resource) {
         return (
@@ -83,12 +97,27 @@ class SingleSong extends React.Component {
               <h5 className="card-text">Album: {song.albumTitle}</h5>
               <h5 className="card-text">Artist: {song.artist}</h5>
               <h5 className="card-text">Release Year: {song.releaseYear}</h5>
-              <div>{buildResources()}</div>
+              {/* <div>{buildResources()}</div> */}
               <div className="single-view-btn-flex">
             <div onClick={this.removeSong}><i className="fas fa-trash-alt fa-2x single-song-delete"></i></div>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
             <ResourceCreateModal getResource={this.getResource} songId={song.id} getSong={this.getSong}/>
             </div>
+            <div>
+      <Button color="primary" id="toggler" className="mt-3">
+        Click For Resources
+      </Button>
+      <UncontrolledCollapse toggler="#toggler">
+        <Card>
+          <CardBody>
+            <div>{buildResources()}</div>
+          </CardBody>
+        </Card>
+      </UncontrolledCollapse>
+    </div>
+            {/* <ResourceCreateAccordion buildResources={buildResources} /> */}
+            <div>
+    </div>
           </div>
           </div>
           </div>
