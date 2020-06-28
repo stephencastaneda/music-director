@@ -119,6 +119,7 @@ class SetCreateForm extends React.Component {
           options={songTitles} // Options to display in the dropdown
           selectedValues={this.state.selectedValues}
           id={this.id}
+          placeholder='Select Songs Here'
           onSelect={this.onSelect} // Function will trigger on select event
           // selectedValues={th} // Preselected value to persist in dropdown
           onSelect={this.songSelectChange} // Function will trigger on select event

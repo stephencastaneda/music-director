@@ -64,8 +64,8 @@ class SingleSong extends React.Component {
         return (
                  <div>
                    {resource.name}
-                   <button><a href={resource.url} className="btn btn-dark" role="button" target="_blank"><i className={resource.icon.icon}></i></a></button>
-                  <button onClick={this.removeResource} id={resource.resourcesId} className="btn btn-danger float-left"><i class="fas fa-minus"></i></button>
+                   <a href={resource.url} target="_blank"><i className={resource.icon.icon}></i></a>
+                  <div onClick={this.removeResource} id={resource.resourcesId} className="float-left"><i class="fas fa-minus"></i></div>
                  </div>
         );
       }
@@ -79,19 +79,19 @@ class SingleSong extends React.Component {
             <img className="card-img-top" src={song.albumImage} alt="album cover" />
           </div>
             <div className="card-body pt-0">
-              <h5 className="card-title">{song.songTitle}</h5>
-              <p className="card-text">Album: {song.albumTitle}</p>
-              <p className="card-text">Artist: {song.artist}</p>
-              <p className="card-text">Release Year: {song.releaseYear}</p>
+              <h2 className="card-title">{song.songTitle}</h2>
+              <h5 className="card-text">Album: {song.albumTitle}</h5>
+              <h5 className="card-text">Artist: {song.artist}</h5>
+              <h5 className="card-text">Release Year: {song.releaseYear}</h5>
               <div>{buildResources()}</div>
-            <button className="btn btn-danger" onClick={this.removeSong}><i className="fas fa-trash-alt"></i></button>
+              <div className="single-view-btn-flex">
+            <div onClick={this.removeSong}><i className="fas fa-trash-alt fa-2x single-song-delete"></i></div>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
             <ResourceCreateModal getResource={this.getResource} songId={song.id} getSong={this.getSong}/>
-
+            </div>
           </div>
           </div>
           </div>
-
     );
   }
 }
