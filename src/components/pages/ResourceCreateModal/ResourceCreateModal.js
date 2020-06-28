@@ -37,7 +37,7 @@ class ResourceCreateModal extends React.Component {
 
      return (
     <div>
-      <Button color="btn btn-dark mb-3" onClick={this.toggle}><i class="fas fa-folder-plus"></i></Button>
+      <div color="btn mb-3" onClick={this.toggle}><i className="fas fa-folder-plus single-song-resource fa-2x"></i></div>
       <Modal isOpen={modal} toggle={this.toggle} className={className}>
         <ModalHeader toggle={this.toggle}>Add Song</ModalHeader>
         <ModalBody>

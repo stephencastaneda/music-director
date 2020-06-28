@@ -1,3 +1,11 @@
 .ResourceCreateModal {
   display: block;
 }
+
+.single-song-resource {
+  cursor: pointer !important;
+}
+
+.single-song-resource:hover {
+  color: red;
+}

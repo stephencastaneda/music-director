@@ -34,3 +34,17 @@
   background-color:#4E5E30;
   border-color:#4E5E30;
 }
+
+.single-song-delete {
+  cursor: pointer;
+}
+
+.single-song-delete:hover {
+  color: red;
+}
+
+.single-view-btn-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

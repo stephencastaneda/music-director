@@ -9,6 +9,8 @@ import {
 
 import SingleSongEditForm from '../../shared/SingleSongEditForm/SingleSongEditForm';
 
+import './SingleViewModalEdit.scss';
+
 class SingleViewEditModal extends React.Component {
   state = {
     isOpen: false,
@@ -41,7 +43,7 @@ class SingleViewEditModal extends React.Component {
 
      return (
     <div>
-      <Button color="warning" onClick={this.toggle}><i className="fas fa-pencil-alt"></i></Button>
+      <div color="btn btn-danger" onClick={this.toggle}><i className="fas fa-pencil-alt fa-2x single-song-edit"></i></div>
       <Modal isOpen={modal} toggle={this.toggle} className={className}>
         <ModalHeader toggle={this.toggle}>Edit Song</ModalHeader>
         <ModalBody>

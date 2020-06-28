@@ -1,3 +1,19 @@
 .SetCard {
   margin-bottom: 15px;
 }
+
+.set-song-delete-btn {
+  display: none;
+}
+.set-text:hover .set-song-delete-btn{
+  color: red;
+  display: block;
+  text-align: center;
+}
+
+
+
+
+
+
+
