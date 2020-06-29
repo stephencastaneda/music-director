@@ -1,4 +1,5 @@
 import React from 'react';
+import { Media, Player, controls } from 'react-media-player';
 
 import {
   UncontrolledCollapse,
@@ -72,6 +73,7 @@ class SingleSong extends React.Component {
   render() {
     const { song, resources, isOpen } = this.state;
     const { buttonLabel, className } = this.props;
+    const { PlayPause, MuteUnmute } = controls;
 
     const buildResources = () => resources.map((resource) => {
       if (resource) {
@@ -93,6 +95,8 @@ class SingleSong extends React.Component {
             <img className="card-img-top" src={song.albumImage} alt="album cover" />
           </div>
             <div className="card-body pt-0">
+              <div className="bg-black"><iframe width="300" height="60" src={song.audio} frameborder="0"></iframe>
+              </div>
               <h2 className="card-title">{song.songTitle}</h2>
               <h5 className="card-text">Album: {song.albumTitle}</h5>
               <h5 className="card-text">Artist: {song.artist}</h5>
