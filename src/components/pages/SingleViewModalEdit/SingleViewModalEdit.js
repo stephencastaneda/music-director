@@ -21,9 +21,7 @@ class SingleViewEditModal extends React.Component {
      this.setState({ isOpen: !this.state.isOpen });
      this.setState({ modal: !this.state.modal });
    };
-   // const [modal, setModal] = useState(false);
 
-   // const toggle = () => setModal(!modal);
 
    updateAfterEdit = () => {
      this.toggle();
