@@ -23,10 +23,15 @@
   left: 0;
 }
 
+.list-group-item-action:focus, .list-group-item-action:hover {
+  background-color: transparent;
+}
+
 .list-group:hover .song-edit-btn {
-  display: block;
-  position: relative;
+  display: inline-block;
+  position: absolute;
   right: 0%;
+  top: 35%;
   margin-left: 5px;
 }
 
@@ -41,4 +46,35 @@
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.song-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #022140;
+}
+
+.list-container {
+  width: 600px;
+}
+
+// .top-word{
+//   position:absolute;
+//   top:0px;
+//   left:10px;
+// }
+
+// .bottom-word{
+//   position:absolute;
+//   top:20px;
+//   left:10px;
+// }
+
+.song-edit-btn:hover {
+  color: red;
+}
+
+.song-delete-btn:hover {
+  color: red;
+  cursor: pointer;
 }

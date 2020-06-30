@@ -1,3 +1,22 @@
 .SongModalEdit {
   display: block;
 }
+
+.song-list-edit-btn {
+  font-size: 20px;
+}
+
+.song-list-edit-btn {
+  display: none;
+}
+.song-list-edit-btn:hover{
+  color: red;
+}
+
+.list-group:hover .song-list-edit-btn {
+  display: inline-block;
+  position: absolute;
+  right: 0%;
+  top: 35%;
+  margin-left: 5px;
+}
