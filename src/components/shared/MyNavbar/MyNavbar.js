@@ -54,7 +54,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="myNavbar">
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/songs">Music Director</NavbarBrand>
+          <NavbarBrand href="/songs">Direct. Music.</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             {buildNavbar()}
