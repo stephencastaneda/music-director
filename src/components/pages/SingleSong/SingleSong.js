@@ -86,15 +86,17 @@ class SingleSong extends React.Component {
       return '';
     });
 
+
     return (
       <div className="col-md-5 mt-4 mx-auto SingleSong">
         <div className="card profile-card-5">
           <div className="card-img-block">
             <img className="card-img-top" src={song.albumImage} alt="album cover" />
           </div>
-            <div className="card-body pt-0">
-              <div className="bg-black"><iframe width="300" height="60" src={song.audio} frameborder="0"></iframe>
-              </div>
+          <div className="card-body pt-0">
+            <div className="bg-black">
+              <iframe width="300" height="60" src={song.audio} frameborder="0"></iframe>
+             </div>
               <h2 className="card-title">{song.songTitle}</h2>
               <h5 className="card-text">Album: {song.albumTitle}</h5>
               <h5 className="card-text">Artist: {song.artist}</h5>
