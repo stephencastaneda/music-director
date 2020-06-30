@@ -10,6 +10,7 @@ class SingleSongEditForm extends React.Component {
       artist: '',
       releaseYear: 1960,
       songTitle: '',
+      audio: '',
     }
 
     componentDidMount() {
@@ -20,6 +21,7 @@ class SingleSongEditForm extends React.Component {
         artist: song.artist,
         releaseYear: song.releaseYear,
         songTitle: song.songTitle,
+        audio: song.audio,
       });
     }
 
@@ -58,6 +60,7 @@ class SingleSongEditForm extends React.Component {
         artist,
         releaseYear,
         songTitle,
+        audio,
       } = this.state;
       const updatedSong = {
         albumImage,
@@ -65,6 +68,7 @@ class SingleSongEditForm extends React.Component {
         artist,
         releaseYear,
         songTitle,
+        audio,
       };
       songsData.putSong(songId, updatedSong)
         .then(() => this.props.updateAfterEdit())

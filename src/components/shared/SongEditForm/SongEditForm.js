@@ -10,6 +10,7 @@ class SongEditForm extends React.Component {
       artist: '',
       releaseYear: 1960,
       songTitle: '',
+      audio: '',
     }
 
     getSongs = () => {
@@ -30,6 +31,7 @@ class SongEditForm extends React.Component {
             artist: song.artist,
             releaseYear: song.releaseYear,
             songTitle: song.songTitle,
+            audio: song.audio,
           });
         })
         .catch((err) => console.error('unable to get song to edit', err));
@@ -71,6 +73,7 @@ class SongEditForm extends React.Component {
         artist,
         releaseYear,
         songTitle,
+        audio,
       } = this.state;
       const updatedSong = {
         albumImage,
@@ -78,7 +81,9 @@ class SongEditForm extends React.Component {
         artist,
         releaseYear,
         songTitle,
+        audio,
       };
+      console.log('the updated song', updatedSong);
       songsData.putSong(songId, updatedSong)
         .then(() => this.props.getSongs())
         .catch((err) => console.error('unable to save song: ', err));
