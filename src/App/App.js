@@ -14,7 +14,6 @@ import './App.scss';
 import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
 
 import Auth from '../components/pages/Auth/Auth';
-import NewSong from '../components/pages/NewSong/NewSong';
 import Set from '../components/pages/Set/Set';
 import SingleSong from '../components/pages/SingleSong/SingleSong';
 import Songs from '../components/pages/Songs/Songs';
@@ -65,7 +64,6 @@ class App extends React.Component {
           <div className="container">
             <div className="row">
               <Switch>
-                <PrivateRoute path='/newsong' component={NewSong} authed={authed} />
                 <PrivateRoute path='/songs/:songId' component={SingleSong} authed={authed} />
                 <PrivateRoute path='/songs/' component={Songs} authed={authed} />
                 <PrivateRoute path='/set' component={Set} authed={authed} />
