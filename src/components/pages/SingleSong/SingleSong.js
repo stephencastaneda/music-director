@@ -97,7 +97,6 @@ class SingleSong extends React.Component {
               <h5 className="card-text">Album: {song.albumTitle}</h5>
               <h5 className="card-text">Artist: {song.artist}</h5>
               <h5 className="card-text">Release Year: {song.releaseYear}</h5>
-              {/* <div>{buildResources()}</div> */}
               <div className="single-view-btn-flex">
             <div onClick={this.removeSong}><i className="fas fa-trash-alt fa-2x single-song-delete"></i></div>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
@@ -115,7 +114,6 @@ class SingleSong extends React.Component {
         </Card>
       </UncontrolledCollapse>
     </div>
-            {/* <ResourceCreateAccordion buildResources={buildResources} /> */}
             <div>
     </div>
           </div>
