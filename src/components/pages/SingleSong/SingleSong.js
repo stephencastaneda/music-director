@@ -76,7 +76,7 @@ class SingleSong extends React.Component {
     const { PlayPause, MuteUnmute } = controls;
 
     const buildResources = () => resources.map((resource) => {
-      if (resource && resource.title) {
+      if (resource && resource.icon) {
         return (
                  <div className="resource-flex">
                 <div onClick={this.removeResource} id={resource.resourcesId}><i class="mr-2 resource-delete fas fa-minus-circle fa-lg"></i></div>
@@ -101,9 +101,8 @@ class SingleSong extends React.Component {
               <h5 className="card-text">Album: {song.albumTitle}</h5>
               <h5 className="card-text">Artist: {song.artist}</h5>
               <h5 className="card-text">Release Year: {song.releaseYear}</h5>
-              {/* <div>{buildResources()}</div> */}
               <div className="single-view-btn-flex">
-            <div onClick={this.removeSong}><i className="fas fa-trash-alt fa-2x single-song-delete"></i></div>
+            <div onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) { this.removeSong(); } } }><i className="fas fa-trash-alt fa-2x single-song-delete"></i></div>
             <SingleViewModalEdit song={song} getSong={this.getSong}/>
             <ResourceCreateModal getResource={this.getResource} songId={song.id} getSong={this.getSong}/>
             </div>
@@ -119,7 +118,6 @@ class SingleSong extends React.Component {
         </Card>
       </UncontrolledCollapse>
     </div>
-            {/* <ResourceCreateAccordion buildResources={buildResources} /> */}
             <div>
     </div>
           </div>

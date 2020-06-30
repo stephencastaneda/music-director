@@ -37,9 +37,6 @@ class MyNavbar extends React.Component {
               <NavLink tag={RRNavLink} to='/songs'>Songs</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} to='/newsong'>New Song</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink tag={RRNavLink} to='/set'>Set</NavLink>
             </NavItem>
             <NavItem>
@@ -54,7 +51,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="myNavbar">
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/songs">Music Director</NavbarBrand>
+          <NavbarBrand href="/songs">Direct. Music.</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             {buildNavbar()}

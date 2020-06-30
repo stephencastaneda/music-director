@@ -9,6 +9,8 @@ import {
 
 import SongEditForm from '../../shared/SongEditForm/SongEditForm';
 
+import './SongModalEdit.scss';
+
 class SongEditModal extends React.Component {
   state = {
     isOpen: false,
@@ -36,7 +38,7 @@ class SongEditModal extends React.Component {
 
      return (
     <div>
-      <Button color="danger song-edit-btn" onClick={this.toggle}><i className="fas fa-pencil-alt"></i></Button>
+      <Button color="" onClick={this.toggle}><i className="song-list-edit-btn fas fa-pencil-alt fa-2x"></i></Button>
       <Modal isOpen={modal} toggle={this.toggle} className={className}>
         <ModalHeader toggle={this.toggle}>Edit Song</ModalHeader>
         <ModalBody>

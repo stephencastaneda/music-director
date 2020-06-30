@@ -34,7 +34,7 @@ class SetCreateModal extends React.Component {
 
      return (
     <div>
-      <Button color="danger set-create-btn mt-3 mb-3" onClick={this.toggle}><i class="far fa-plus-square"></i></Button>
+      <Button color="secondary set-create-btn mt-3 mb-3" onClick={this.toggle}><i class="far fa-plus-square"></i></Button>
       <Modal isOpen={modal} toggle={this.toggle} className={className}>
         <ModalHeader toggle={this.toggle}>Create Set</ModalHeader>
         <ModalBody>
