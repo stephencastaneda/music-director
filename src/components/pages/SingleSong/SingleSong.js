@@ -1,5 +1,4 @@
 import React from 'react';
-import { Media, Player, controls } from 'react-media-player';
 
 import {
   UncontrolledCollapse,
@@ -73,7 +72,6 @@ class SingleSong extends React.Component {
   render() {
     const { song, resources, isOpen } = this.state;
     const { buttonLabel, className } = this.props;
-    const { PlayPause, MuteUnmute } = controls;
 
     const buildResources = () => resources.map((resource) => {
       if (resource && resource.icon) {
