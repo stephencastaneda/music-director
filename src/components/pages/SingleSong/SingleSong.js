@@ -76,7 +76,7 @@ class SingleSong extends React.Component {
     const { PlayPause, MuteUnmute } = controls;
 
     const buildResources = () => resources.map((resource) => {
-      if (resource) {
+      if (resource && resource.title) {
         return (
                  <div className="resource-flex">
                 <div onClick={this.removeResource} id={resource.resourcesId}><i class="mr-2 resource-delete fas fa-minus-circle fa-lg"></i></div>
