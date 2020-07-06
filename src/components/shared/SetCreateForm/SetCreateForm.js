@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import songsData from '../../../helpers/data/songsData';
 import setSongsData from '../../../helpers/data/setSongData';
+import twilioData from '../../../helpers/data/twilioData';
 
 
 import './SetCreateForm.scss';
@@ -60,7 +61,15 @@ class SetCreateForm extends React.Component {
     this.props.getSets();
   }
 
+sendSMS = () => {
+  const numFromFirebase = '6158537054';
+  const smsNum = `+1${numFromFirebase}`;
+  const message = 'Our list for this Sunday';
+  twilioData.sendSMS(smsNum, message);
+}
+
   saveSet = (e) => {
+    this.sendSMS();
     e.preventDefault();
     this.props.toggle();
     const {
