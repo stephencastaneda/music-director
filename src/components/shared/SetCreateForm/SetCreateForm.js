@@ -49,6 +49,18 @@ class SetCreateForm extends React.Component {
     console.log('selected item', selectedItem);
   }
 
+  sendSMS = () => {
+    const { setSongs } = this.state;
+    const selectedSetSongs = [];
+    setSongs.forEach((setSong) => {
+      selectedSetSongs.push(setSong.name);
+    });
+    const numFromFirebase = '9197100364';
+    const smsNum = `+1${numFromFirebase}`;
+    const message = `Our Song list for this upcoming Sunday is: ${selectedSetSongs} `;
+    twilioData.sendSMS(smsNum, message);
+  }
+
   saveSetSongs = (setId) => {
     const { setSongs } = this.state;
     setSongs.forEach((setSong) => {
@@ -56,20 +68,28 @@ class SetCreateForm extends React.Component {
         songId: setSong.id,
         setId,
       };
-      setSongsData.postSetSongs(newSetSong);
+      setSongsData.postSetSongs(newSetSong)
+        .then(() => {
+          this.props.getSets();
+        })
+        .catch();
     });
-    this.props.getSets();
+    this.sendSMS();
   }
 
-sendSMS = () => {
-  const numFromFirebase = '6158537054';
-  const smsNum = `+1${numFromFirebase}`;
-  const message = 'Our list for this Sunday';
-  twilioData.sendSMS(smsNum, message);
-}
+  // saveSetSongs = (setId) => {
+  //   const { setSongs } = this.state;
+  //   setSongs.forEach((setSong) => {
+  //     const newSetSong = {
+  //       songId: setSong.id,
+  //       setId,
+  //     };
+  //     setSongsData.postSetSongs(newSetSong);
+  //   });
+  //   this.props.getSets();
+  // }
 
   saveSet = (e) => {
-    this.sendSMS();
     e.preventDefault();
     this.props.toggle();
     const {
