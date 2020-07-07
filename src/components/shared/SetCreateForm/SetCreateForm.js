@@ -4,6 +4,7 @@ import { Multiselect } from 'multiselect-react-dropdown';
 import moment from 'moment';
 
 import songsData from '../../../helpers/data/songsData';
+import userData from '../../../helpers/data/userData';
 import setSongsData from '../../../helpers/data/setSongData';
 import twilioData from '../../../helpers/data/twilioData';
 
@@ -20,6 +21,7 @@ class SetCreateForm extends React.Component {
     selectedValues: '',
     songId: '',
     setId: '',
+    users: [],
   }
 
   getAllSongs = () => {
@@ -28,8 +30,15 @@ class SetCreateForm extends React.Component {
       .catch((err) => console.error('could not get all songs: ', err));
   }
 
+  getAllUsers = () => {
+    userData.getAllUsers()
+      .then((users) => this.setState({ users }))
+      .catch((err) => console.error('could not get all users: ', err));
+  }
+
   componentDidMount() {
     this.getAllSongs();
+    this.getAllUsers();
   }
 
   setTitleChange = (e) => {
@@ -50,13 +59,17 @@ class SetCreateForm extends React.Component {
   }
 
   sendSMS = () => {
-    const { setSongs } = this.state;
+    const { setSongs, users } = this.state;
     const selectedSetSongs = [];
+    const userNumbers = [];
     setSongs.forEach((setSong) => {
       selectedSetSongs.push(setSong.name);
     });
-    const numFromFirebase = '9197100364';
-    const smsNum = `+1${numFromFirebase}`;
+    users.map((user) => (
+      userNumbers.push(`+1${user.phone}`)
+    ));
+    const numFromFirebase = `${userNumbers}`;
+    const smsNum = `${numFromFirebase}`;
     const message = `Our Song list for this upcoming Sunday is: ${selectedSetSongs} `;
     twilioData.sendSMS(smsNum, message);
   }
