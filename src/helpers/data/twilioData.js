@@ -15,4 +15,11 @@ const sendSMS = (smsNum, message) => axios({
   },
 });
 
-export default { sendSMS };
+const sendMultipleSMS = (smsNum, message) => axios.all(smsNum.map((num) => sendSMS(num, message)))
+  .then(axios.spread((...res) => console.log(res)));
+
+
+// Promise.all(smsNum.map((num) => sendSMS(num, message)))
+//   .then((response) => console.log('the response', response));
+
+export default { sendSMS, sendMultipleSMS };

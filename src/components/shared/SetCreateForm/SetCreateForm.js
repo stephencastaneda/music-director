@@ -61,17 +61,16 @@ class SetCreateForm extends React.Component {
   sendSMS = () => {
     const { setSongs, users } = this.state;
     const selectedSetSongs = [];
-    const userNumbers = [];
+    const smsNum = [];
     setSongs.forEach((setSong) => {
       selectedSetSongs.push(setSong.name);
     });
     users.map((user) => (
-      userNumbers.push(`+1${user.phone}`)
+      smsNum.push(`+1${user.phone}`)
     ));
-    const numFromFirebase = `${userNumbers}`;
-    const smsNum = `${numFromFirebase}`;
     const message = `Our Song list for this upcoming Sunday is: ${selectedSetSongs} `;
-    twilioData.sendSMS(smsNum, message);
+    console.log('dem nums', smsNum);
+    twilioData.sendMultipleSMS(smsNum, message);
   }
 
   saveSetSongs = (setId) => {
