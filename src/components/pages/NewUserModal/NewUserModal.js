@@ -7,7 +7,7 @@ import {
   ModalFooter,
 } from 'reactstrap';
 
-import SetCreateForm from '../../shared/SetCreateForm/SetCreateForm';
+import NewUserCreateForm from '../../shared/NewUserCreateForm/NewUserCreateForm';
 
 class SetCreateModal extends React.Component {
   state = {
@@ -34,11 +34,11 @@ class SetCreateModal extends React.Component {
 
      return (
     <div>
-      <Button title="Click to create a set" color="secondary set-create-btn mt-3 mb-3" onClick={this.toggle}><i class="far fa-plus-square"></i></Button>
+      <Button color="warning set-create-btn mt-3 mb-3" onClick={this.toggle}><i class="fas fa-mobile mr-2"></i>Sign Up for Text Alerts!</Button>
       <Modal isOpen={modal} toggle={this.toggle} className={className}>
-        <ModalHeader toggle={this.toggle}>Create Set</ModalHeader>
-        <ModalBody>
-          <SetCreateForm sets={this.props.sets} songs={songs} toggle={this.toggle} getSets={this.props.getSets} getAllSongs={this.getAllSongs}/>
+        <ModalHeader toggle={this.toggle}>Sign Up For Alerts</ModalHeader>
+       <ModalBody>
+          <NewUserCreateForm users={this.props.users} toggle={this.toggle}/>
       </ModalBody>
       </Modal>
     </div>
