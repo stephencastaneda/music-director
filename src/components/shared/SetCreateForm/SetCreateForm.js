@@ -4,7 +4,9 @@ import { Multiselect } from 'multiselect-react-dropdown';
 import moment from 'moment';
 
 import songsData from '../../../helpers/data/songsData';
+import userData from '../../../helpers/data/userData';
 import setSongsData from '../../../helpers/data/setSongData';
+import twilioData from '../../../helpers/data/twilioData';
 
 
 import './SetCreateForm.scss';
@@ -19,6 +21,7 @@ class SetCreateForm extends React.Component {
     selectedValues: '',
     songId: '',
     setId: '',
+    users: [],
   }
 
   getAllSongs = () => {
@@ -27,8 +30,15 @@ class SetCreateForm extends React.Component {
       .catch((err) => console.error('could not get all songs: ', err));
   }
 
+  getAllUsers = () => {
+    userData.getAllUsers()
+      .then((users) => this.setState({ users }))
+      .catch((err) => console.error('could not get all users: ', err));
+  }
+
   componentDidMount() {
     this.getAllSongs();
+    this.getAllUsers();
   }
 
   setTitleChange = (e) => {
@@ -48,6 +58,21 @@ class SetCreateForm extends React.Component {
     console.log('selected item', selectedItem);
   }
 
+  sendSMS = () => {
+    const { setSongs } = this.state;
+    const selectedSetSongs = [];
+    const smsNum = '+16158537054';
+    setSongs.forEach((setSong) => {
+      selectedSetSongs.push(setSong.name);
+    });
+    // users.map((user) => (
+    //   smsNum.push(`+1${user.phone}`)
+    // ));
+    const message = `Our Song list for this upcoming Sunday is: ${selectedSetSongs} `;
+    console.log('dem nums again', smsNum);
+    twilioData.sendSMS(smsNum, message);
+  }
+
   saveSetSongs = (setId) => {
     const { setSongs } = this.state;
     setSongs.forEach((setSong) => {
@@ -55,10 +80,26 @@ class SetCreateForm extends React.Component {
         songId: setSong.id,
         setId,
       };
-      setSongsData.postSetSongs(newSetSong);
+      setSongsData.postSetSongs(newSetSong)
+        .then(() => {
+          this.props.getSets();
+        })
+        .catch();
     });
-    this.props.getSets();
+    this.sendSMS();
   }
+
+  // saveSetSongs = (setId) => {
+  //   const { setSongs } = this.state;
+  //   setSongs.forEach((setSong) => {
+  //     const newSetSong = {
+  //       songId: setSong.id,
+  //       setId,
+  //     };
+  //     setSongsData.postSetSongs(newSetSong);
+  //   });
+  //   this.props.getSets();
+  // }
 
   saveSet = (e) => {
     e.preventDefault();

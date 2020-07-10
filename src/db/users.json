@@ -1,0 +1,33 @@
+{
+  "user1": {
+    "name": "Stephen Castaneda",
+    "phone": "6158537054",
+    "email": "stephen.castaneda40@gmail.com"
+  },
+  "user2": {
+    "name": "Davis Lindell",
+    "phone": "6159348298",
+    "email": "stephen.castaneda40@gmail.com"
+  },
+  "user3": {
+    "name": "Namita Manohar",
+    "phone": "9197100364",
+    "email": "stephen.castaneda40@gmail.com"
+  },
+  "user4": {
+    "name": "Mehreen Butt",
+    "phone": "3146774023",
+    "email": "stephen.castaneda40@gmail.com"
+  },
+  "user5": {
+    "name": "Hannah Feutz",
+    "phone": "8037072330",
+    "email": "stephen.castaneda40@gmail.com"
+  },
+  "user6": {
+    "name": "Shunda Wright",
+    "phone": "3142629193",
+    "email": "stephen.castaneda40@gmail.com"
+  }
+}
+
