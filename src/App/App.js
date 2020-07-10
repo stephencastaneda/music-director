@@ -61,7 +61,7 @@ class App extends React.Component {
        <BrowserRouter>
         <React.Fragment>
           <MyNavbar authed={authed}/>
-          <div className="container">
+          <div>
             <div className="row">
               <Switch>
                 <PrivateRoute path='/songs/:songId' component={SingleSong} authed={authed} />

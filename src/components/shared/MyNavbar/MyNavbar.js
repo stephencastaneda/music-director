@@ -39,7 +39,7 @@ class MyNavbar extends React.Component {
             <NavItem>
               <NavLink tag={RRNavLink} to='/set'>Set</NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="logout-btn">
               <NavLink onClick={this.logMeOut}>Logout</NavLink>
             </NavItem>
           </Nav>
