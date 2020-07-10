@@ -19,4 +19,6 @@ const getAllUsers = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllUsers };
+const postUser = (newUser) => axios.post(`${baseUrl}/user.json`, newUser);
+
+export default { getAllUsers, postUser };
