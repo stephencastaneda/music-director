@@ -89,7 +89,7 @@ class SingleSong extends React.Component {
 
     return (
       <div className="col-md-5 mt-4 mx-auto SingleSong">
-        <div className="card profile-card-5">
+        <div className="card single-song-card profile-card-5">
           <div className="card-img-block">
             <img className="card-img-top" src={song.albumImage} alt="album cover" />
           </div>

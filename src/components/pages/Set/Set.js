@@ -78,7 +78,7 @@ class Set extends React.Component {
         <NewUserModal users={users} getUsers={this.getUsers}/>
         <SetCreateModal sets={sets} getSets={this.getSets} getAllSongs={this.getAllSongs}/>
         </div>
-        <div className="d-flex flex-wrap">
+        <div className="d-flex flex-wrap pl-4">
           {buildSetCards}
         </div>
       </div>
