@@ -10,16 +10,14 @@ const sendSMS = (smsNum, message) => axios({
     'Content-Type': 'application/json',
   },
   data: {
-    sendNumber: smsNum,
+    sendNumbers: smsNum,
     message,
   },
 });
 
-const sendMultipleSMS = (smsNum, message) => axios.all(smsNum.map((num) => sendSMS(num, message)))
-  .then(axios.spread((...res) => console.log(res)));
+// const sendMultipleSMS = (smsNum, message) => smsNum.forEach((num) => {
+//   console.log('num', num);
+//   // sendSMS(num, message);
+// });
 
-
-// Promise.all(smsNum.map((num) => sendSMS(num, message)))
-//   .then((response) => console.log('the response', response));
-
-export default { sendSMS, sendMultipleSMS };
+export default { sendSMS };
