@@ -111,8 +111,8 @@ class SingleSong extends React.Component {
         Click For Resources
       </Button>
       <UncontrolledCollapse toggler="#toggler">
-        <Card>
-          <CardBody>
+        <Card className="mx-0 justify-content-center">
+          <CardBody className="resource-card">
             <div>{buildResources()}</div>
           </CardBody>
         </Card>
